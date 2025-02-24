@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('performa_actual', function (Blueprint $table) {
             $table->id();
-            $table->integer('populasi_id');
+            $table->foreignId('populasi_id')->constrained(table:'populasi', indexName:'Performa_actual_populasi_id_foreign');
             $table->decimal('fcr', 4, 3);
             $table->decimal('fi', 4, 3);
             $table->decimal('fe', 4, 2);
