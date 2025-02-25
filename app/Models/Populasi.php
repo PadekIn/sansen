@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Vinkla\Hashids\Facades\Hashids;
 
 class Populasi extends Model
@@ -23,5 +24,9 @@ class Populasi extends Model
 
     public function getHashidAttribute() {
         return Hashids::encode($this->id);
+    }
+
+    public function peformaActual() : HasOne {
+        return $this->hasOne(Performa_actual::class);
     }
 }
