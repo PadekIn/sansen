@@ -17,9 +17,9 @@ return new class extends Migration
             $table->integer('umur');
             $table->integer('kematian_atas');
             $table->integer('kematian_bawah');
-            $table->unsignedBigInteger('id_tipe_pakan_atas');
+            $table->foreignId('id_tipe_pakan_atas')->constrained(table:'pakan', indexName:'perkembangan_id_tipe_pakan_atas_foreign');
             $table->integer('pakan_atas');
-            $table->unsignedBigInteger('id_tipe_pakan_bawah');
+            $table->foreignId('id_tipe_pakan_bawah')->constrained(table:'pakan', indexName:'perkembangan_id_tipe_pakan_bawah_foreign');
             $table->integer('pakan_bawah');
             $table->decimal('abw_betina_atas', 6, 2);
             $table->decimal('abw_betina_bawah', 6, 2);

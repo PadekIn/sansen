@@ -29,4 +29,8 @@ class Populasi extends Model
     public function peformaActual() : HasOne {
         return $this->hasOne(Performa_actual::class);
     }
+
+    public function perkembangann() : HasOne {
+        return $this->hasOne(Perkembangan::class);
+    }
 }

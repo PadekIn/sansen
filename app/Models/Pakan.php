@@ -20,4 +20,12 @@ class Pakan extends Model
     public function getHashidAttribute() {
         return Hashids::encode($this->id);
     }
+
+    public function perkembanganAtas(){
+        return $this->hasMany(Perkembangan::class, 'id_tipe_pakan_atas');
+    }
+
+    public function perkembanganBawah(){
+        return $this->hasMany(Perkembangan::class, 'id_tipe_pakan_bawah');
+    }
 }
