@@ -17,7 +17,13 @@ class StandarPeformaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'fcr' => $this->faker->randomFloat(3, 0, 999),
+            'fi' => $this->faker->randomFloat(3, 0, 999),
+            'fe' => $this->faker->randomFloat(2, 0, 999),
+            'dep' => $this->faker->randomFloat(2, 0, 999),
+            'abw' => $this->faker->randomFloat(2, 0, 999),
+            'adg' => $this->faker->randomNumber(),
+            'ip' => $this->faker->randomNumber(),
         ];
     }
 }
