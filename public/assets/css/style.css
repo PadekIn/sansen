@@ -1033,7 +1033,7 @@ body {
 }
 
 .menu-toggle {
-  background-image: url(../img/svg/Bulk/Menu-toggle-white.svg);
+  background-image: url(../img/svg/Bulk/menu.svg);
   width: 24px;
   height: 24px;
 }
@@ -1045,7 +1045,7 @@ body {
 }
 
 .home {
-  background-image: url(../img/svg/Bulk/Home-white.svg);
+  background-image: url(../img/svg/Bulk/house.svg);
   width: 24px;
   height: 24px;
 }
@@ -1056,14 +1056,38 @@ body {
   height: 24px;
 }
 
-.folder {
-  background-image: url(../img/svg/Bulk/Folder-white.svg);
+.report {
+  background-image: url(../img/svg/Bulk/notebook-text.svg);
   width: 24px;
   height: 24px;
 }
 
+.activity {
+    background-image: url(../img/svg/Bulk/square-activity.svg);
+    width: 24px;
+    height: 24px;
+  }
+
+.performa {
+    background-image: url(../img/svg/Bulk/chart-pie.svg);
+    width: 24px;
+    height: 24px;
+  }
+
+.wheat {
+    background-image: url(../img/svg/Bulk/wheat.svg);
+    width: 24px;
+    height: 24px;
+  }
+
+.pop {
+    background-image: url(../img/svg/Bulk/drumstick.svg);
+    width: 24px;
+    height: 24px;
+  }
+
 .arrow-down {
-  background-image: url(../img/svg/Bulk/Arrow-DownCircle.svg);
+  background-image: url(../img/svg/Bulk/circle-chevron-down.svg);
   width: 24px;
   height: 24px;
 }
@@ -1105,7 +1129,7 @@ body {
 }
 
 .setting {
-  background-image: url(../img/svg/Bulk/Setting-white.svg);
+  background-image: url(../img/svg/Bulk/bolt.svg);
   width: 24px;
   height: 24px;
 }
@@ -1993,8 +2017,8 @@ label {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #0061f7 !important;
-  width: 253px;
+  background-color: #3f8c9d !important;
+  width: 280px;
   padding: 20px 15px 37px 20px;
   -webkit-transition: 0.5s all;
   -o-transition: 0.5s all;
@@ -2047,7 +2071,7 @@ label {
   opacity: 0.6;
   color: #fff;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2.43;
 }
 
@@ -2175,16 +2199,18 @@ label {
 }
 
 .logo-title {
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 0.8;
+  margin-left: 10px;
   letter-spacing: 0.86px;
 }
 
 .logo-subtitle {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
-  line-height: 2.42;
+  line-height: 0.5;
+  margin-left: 18px;
   letter-spacing: 0.86px;
 }
 

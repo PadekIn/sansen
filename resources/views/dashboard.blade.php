@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container">
-        <h2 class="main-title">Dashboard</h2>
+        <h2 class="main-title">Beranda</h2>
         <div class="row">
             Content
         </div>
