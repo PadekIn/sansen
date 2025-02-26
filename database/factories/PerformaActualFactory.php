@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Populasi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,14 @@ class PerformaActualFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'populasi_id' => Populasi::factory(),
+            'fcr' => $this->faker->randomFloat(3, 0, 999),
+            'fi' => $this->faker->randomFloat(3, 0, 999),
+            'fe' => $this->faker->randomFloat(2, 0, 999),
+            'dep' => $this->faker->randomFloat(2, 0, 999),
+            'abw' => $this->faker->randomFloat(2, 0, 999),
+            'adg' => $this->faker->randomNumber(),
+            'ip' => $this->faker->randomNumber()
         ];
     }
 }
