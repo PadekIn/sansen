@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perkembangan', function (Blueprint $table) {
+        Schema::create('perkembangans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('populasi_id')->constrained(table:'populasi', indexName:'perkembangan_populasi_id_foreign');
+            $table->foreignId('populasi_id')->constrained(table:'populasis', indexName:'perkembangan_populasi_id_foreign');
             $table->integer('umur');
             $table->integer('kematian_atas');
             $table->integer('kematian_bawah');
-            $table->foreignId('id_tipe_pakan_atas')->constrained(table:'pakan', indexName:'perkembangan_id_tipe_pakan_atas_foreign');
+            $table->foreignId('id_tipe_pakan_atas')->constrained(table:'pakans', indexName:'perkembangan_id_tipe_pakan_atas_foreign');
             $table->integer('pakan_atas');
-            $table->foreignId('id_tipe_pakan_bawah')->constrained(table:'pakan', indexName:'perkembangan_id_tipe_pakan_bawah_foreign');
+            $table->foreignId('id_tipe_pakan_bawah')->constrained(table:'pakans', indexName:'perkembangan_id_tipe_pakan_bawah_foreign');
             $table->integer('pakan_bawah');
             $table->decimal('abw_betina_atas', 6, 2);
             $table->decimal('abw_betina_bawah', 6, 2);

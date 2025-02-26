@@ -19,7 +19,7 @@ class PopulasiFactory extends Factory
         return [
             'jumlah' => $this->faker->randomNumber(),
             'berat' => $this->faker->randomNumber(),
-            'umur_akhir' => $this->faker->randomFloat(1, 0, 999),
+            'umur_akhir' => $this->faker->randomFloat(1, 0, 99.9),
             'grade_doc' => $this->faker->randomElement(['Silver', 'Gold', 'Platinum']),
             'bw_doc' => $this->faker->randomNumber(),
             'asal_doc' => $this->faker->text(75),

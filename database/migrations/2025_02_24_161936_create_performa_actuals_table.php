@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('performa_actual', function (Blueprint $table) {
+        Schema::create('performa_actuals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('populasi_id')->constrained(table:'populasi', indexName:'Performa_actual_populasi_id_foreign');
+            $table->foreignId('populasi_id')->constrained(table:'populasis', indexName:'Performa_actual_populasi_id_foreign');
             $table->decimal('fcr', 4, 3);
             $table->decimal('fi', 4, 3);
             $table->decimal('fe', 4, 2);

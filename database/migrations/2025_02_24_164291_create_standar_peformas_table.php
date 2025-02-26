@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('standar_peforma', function (Blueprint $table) {
+        Schema::create('standar_peformas', function (Blueprint $table) {
             $table->id();
             $table->decimal('fcr', 4, 3);
             $table->decimal('fi', 4, 3);
