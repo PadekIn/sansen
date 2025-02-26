@@ -32,7 +32,7 @@
             <div class="w-1/2 sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg" style="background-color: #f0f2fa;">
                 <img src="./assets/img/svg/logo.PNG" alt="" width="200px" height="200px" class="mx-auto">
                 <br>
-                <p class="text-center">
+                <p class="text-center font-bold">
                     SISTEM INFORMASI MANAJEMAN <br>
                     PRODUKSI AYAM BROILER <br>
                     SANSEN BROTHER FARM
