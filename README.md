@@ -29,8 +29,11 @@ SISTEM INFORMASI MANAJEMAN PRODUKSI AYAM BROILER SANSEN BROTHER FARM.
     php artisan db:seed
     ```
 8.  Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel
-    `    php artisan serve
-   `
+
+    ```
+        php artisan serve
+    ```
+
     Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses di:
 
         http://localhost:8000
