@@ -13,6 +13,10 @@ Sebelum download project pastikan versi php minimal 8.2 atau yang paling terbaru
     ```
     composer install
     ```
+    dan jalankan perintah berikut untuk menginstall node module:
+    ```
+    npm i
+    ```
 3.  Buat file .env berdasarkan dari file .env.example dengan menjalankan perintah berikut:
     ```
     cp .env.example .env
