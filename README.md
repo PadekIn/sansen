@@ -34,16 +34,22 @@ Sebelum download project pastikan versi php minimal 8.2 atau yang paling terbaru
     ```
     php artisan db:seed
     ```
-8.  Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel
+    
+8.  build app
+    ``` 
+    npm run build
+    ```
+
+9. Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel
 
     ```
     php artisan serve
     ```
 
-    Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses di:
-
+10. Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses di:
+    ```
         http://localhost:8000
-
+    ```
 ## Login
 
 Untuk login aplikasi silakan masukkan surel dan kata sandi berikut
