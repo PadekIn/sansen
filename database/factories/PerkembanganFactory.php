@@ -27,8 +27,6 @@ class PerkembanganFactory extends Factory
             'pakan_atas' => $this->faker->randomNumber(),
             'id_tipe_pakan_bawah' => Pakan::factory(),
             'pakan_bawah' => $this->faker->randomNumber(),
-            'abw_betina_atas' => $this->faker->randomFloat(2, 0, 999),
-            'abw_betina_bawah' => $this->faker->randomFloat(2, 0, 999),
             'abw_normal_atas' => $this->faker->randomFloat(2, 0, 999),
             'abw_normal_bawah' => $this->faker->randomFloat(2, 0, 999)
         ];

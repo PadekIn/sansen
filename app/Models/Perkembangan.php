@@ -19,8 +19,6 @@ class Perkembangan extends Model
         'pakan_atas',
         'id_tipe_pakan_bawah',
         'pakan_bawah',
-        'abw_betina-atas',
-        'abw_betina-bawah',
         'abw_normal_atas',
         'abw_normal_bawah',
     ];

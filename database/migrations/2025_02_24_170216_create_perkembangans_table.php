@@ -21,8 +21,6 @@ return new class extends Migration
             $table->integer('pakan_atas');
             $table->foreignId('id_tipe_pakan_bawah')->constrained(table:'pakans', indexName:'perkembangan_id_tipe_pakan_bawah_foreign');
             $table->integer('pakan_bawah');
-            $table->decimal('abw_betina_atas', 6, 2);
-            $table->decimal('abw_betina_bawah', 6, 2);
             $table->decimal('abw_normal_atas', 6, 2);
             $table->decimal('abw_normal_bawah', 6, 2);
             $table->timestamps();
