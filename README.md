@@ -33,7 +33,7 @@ Sebelum download project pastikan versi php minimal 8.2 atau yang paling terbaru
 8.  Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel
 
     ```
-        php artisan serve
+    php artisan serve
     ```
 
     Setelah perintah di atas dijalankan, web app Anda bisa sudah bisa diakses di:
