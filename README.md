@@ -4,6 +4,8 @@ SISTEM INFORMASI MANAJEMAN PRODUKSI AYAM BROILER SANSEN BROTHER FARM.
 
 ## Installation / Instalasi
 
+Sebelum download project pastikan versi php minimal 8.2 atau yang paling terbaru
+
 ### Manual Setup
 
 1.  Download project atau clone repo ke dalam komputer
