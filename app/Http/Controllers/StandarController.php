@@ -48,4 +48,24 @@ class StandarController extends Controller
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
     }
+
+    public function update( request $request, $id) {
+        try {
+            $unhashed = Hashids::decode($id)[0];
+            $standar = Standar_peforma::find($unhashed);
+            $request->validate([
+                'fcr' => 'required',
+                'fi' => 'required',
+                'fe' => 'required',
+                'dep' => 'required',
+                'abw' => 'required',
+                'adg' => 'required',
+                'ip' => 'required'
+            ]);
+            $standar->update($request->all());
+            return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa updated successfully');
+        } catch (\Throwable $th) {
+            return redirect()->route('login')->with('error', 'Something went wrong');
+        }
+    }
 }
