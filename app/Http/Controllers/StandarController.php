@@ -68,4 +68,15 @@ class StandarController extends Controller
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
     }
+
+    public function destroy($id) {
+        try {
+            $unhashed = Hashids::decode($id)[0];
+            $standar = Standar_peforma::find($unhashed);
+            $standar->delete();
+            return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa deleted successfully');
+        } catch (\Throwable $th) {
+            return redirect()->route('login')->with('error', 'Something went wrong');
+        }
+    }
 }
