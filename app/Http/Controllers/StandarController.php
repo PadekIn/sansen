@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Standar_peforma;
 use Illuminate\Http\Request;
+use Vinkla\Hashids\Facades\Hashids;
 
 class StandarController extends Controller
 {
@@ -33,6 +34,16 @@ class StandarController extends Controller
             ]);
             Standar_peforma::create($request->all());
             return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa created successfully');
+        } catch (\Throwable $th) {
+            return redirect()->route('login')->with('error', 'Something went wrong');
+        }
+    }
+
+    public function edit($id) {
+        try {
+            $unhashed = Hashids::decode($id)[0];
+            $standar = Standar_peforma::find($unhashed);
+            return view('pages.performa.standar.edit', compact('standar'));
         } catch (\Throwable $th) {
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
