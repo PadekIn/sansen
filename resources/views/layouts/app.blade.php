@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sansen Brother Farm | Beranda</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/img/svg/logo.PNG" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/svg/logo.PNG') }}" type="image/x-icon">
     <!-- Custom styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -25,7 +25,7 @@
                 <div class="sidebar-head">
                     <a href="/" class="logo-wrapper" title="Home">
                         <span class="sr-only">Home</span>
-                        <img src="./assets/img/svg/logo.PNG" alt="" width="59px" height="59px" />
+                        <img src="{{ asset('assets/img/svg/logo.PNG') }}" alt="" width="59px" height="59px" />
                         <!-- <span class="icon logo" aria-hidden="true"></span> -->
                         <div class="logo-text">
                             <span class="logo-title">SANSEN</span><br>
@@ -106,7 +106,7 @@
                                 <span class="sr-only">Profile</span>
                                 <span class="nav-user-img">
                                     <picture>
-                                        <source srcset="./assets/img/avatar/profile-ayam.png" type="image/webp"><img src="./assets/img/avatar/profile-ayam.png" alt="User name">
+                                        <source srcset="{{ asset('assets/img/avatar/profile-ayam.png') }}" type="image/webp"><img src="{{ asset('assets/img/avatar/profile-ayam.png') }}" alt="User name">
                                     </picture>
                                 </span>
                             </button>
@@ -148,11 +148,11 @@
         </div>
     </div>
     <!-- Chart library -->
-    <script src="./assets/plugins/chart.min.js"></script>
+    <script src="{{ asset('assets/plugins/chart.min.js') }}"></script>
     <!-- Icons library -->
-    <script src="assets/plugins/feather.min.js"></script>
+    <script src="{{ asset('assets/plugins/feather.min.js') }}"></script>
     <!-- Custom scripts -->
-    <script src="assets/js/script.js"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script>

@@ -1,4 +1,4 @@
-@component("layouts.app")
+<x-app-layout>
 <div class="pagetitle">
     <h1>Standar Performa</h1>
     <nav>
@@ -20,7 +20,6 @@
                             {{-- <a href="{{ route('') }}" class="btn btn-primary">Daftarkan Standar Performa
                                 Baru</a> --}}
                         </h5>
-                        {{-- <button class="btn btn-sm btn-warning text-white" id="btn-print">Print</button> --}}
                     </div>
                     <!-- Table with stripped rows -->
                     <table id="listTable" class="table datatable">
@@ -159,5 +158,5 @@
     });
 </script>
 
-@endcomponent
+</x-app-layout>
 
