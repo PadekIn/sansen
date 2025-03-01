@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./assets/img/svg/logo.PNG" type="image/x-icon">
     <!-- Custom styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -41,7 +41,10 @@
                 <div class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Beranda</a>
+                            <a class="active" href="/">
+                                <span class="icon home" aria-hidden="true"></span>
+                                Beranda
+                            </a>
                         </li>
                         <li>
                             <a class="show-cat-btn" href="##">
@@ -53,7 +56,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="">Standar</a>
+                                    <a href="{{ route('main.standar') }}">Standar</a>
                                 </li>
                                 <li>
                                     <a href="">Actual</a>
@@ -61,16 +64,28 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/"><span class="icon pop" aria-hidden="true"></span>Populasi</a>
+                            <a class="show-cat-btn" href="/">
+                                <span class="icon pop" aria-hidden="true">
+                                </span>Populasi
+                                </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/"><span class="icon activity" aria-hidden="true"></span>Perkembangan</a>
+                            <a class="show-cat-btn" href="/">
+                                <span class="icon activity" aria-hidden="true">
+                                </span>Perkembangan
+                                </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/"><span class="icon wheat" aria-hidden="true"></span>Pakan</a>
+                            <a class="show-cat-btn" href="/">
+                                <span class="icon wheat" aria-hidden="true">
+                                </span>Pakan
+                                </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/"><span class="icon report" aria-hidden="true"></span>Laporan</a>
+                            <a class="show-cat-btn" href="/">
+                                <span class="icon report" aria-hidden="true">
+                                </span>Laporan
+                            </a>
                         </li>
                 </div>
             </div>

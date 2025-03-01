@@ -18,11 +18,12 @@ class StandarController extends Controller
     }
 
     public function create() {
-            return view('pages.performa.standar.create');
+        return view('pages.dashboard.dashboard');
     }
 
     public function store(request $request) {
         try {
+            // tambahin eror handling untuk validasi, kalau eror return back with eror
             $request->validate([
                 'fcr' => 'required',
                 'fi' => 'required',
