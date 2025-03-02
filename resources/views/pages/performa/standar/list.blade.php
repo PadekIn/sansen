@@ -45,10 +45,10 @@
                             <td class="no-print">
                                 <div class="d-flex">
                                     <a href="{{ route('main.standar.edit', $standar->hashid) }}"
-                                        class="btn btn-sm btn-warning">Edit</a>
+                                        class="btn btn-sm btn-warning">Sunting</a>
                                     <div style="width: 10px;"></div>
                                     <button type="button" onclick="destroy('{{ $standar->hashid }}')"
-                                        class="btn btn-sm btn-danger">Delete</button>
+                                        class="btn btn-sm btn-danger">Hapus</button>
                                 </div>
                             </td>
                         </tr>

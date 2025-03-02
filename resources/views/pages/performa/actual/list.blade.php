@@ -48,9 +48,9 @@
                                 <td>{{ $actual->ip }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{ route('main.actual.edit', $actual->hashid) }}" class="btn btn-warning btn-sm me-2">Edit</a>
+                                        <a href="{{ route('main.actual.edit', $actual->hashid) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
                                         <button type="button" onclick="destroy('{{ $actual->hashid }}')"
-                                        class="btn btn-sm btn-danger">Delete</button>
+                                        class="btn btn-sm btn-danger">Hapus</button>
                                     </div>
                                 </td>
                             </tr>

@@ -43,7 +43,7 @@
                                 <td>{{ $populasi->check_out }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{ route('main.populasi.edit', $populasi->hashid) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ route('main.populasi.edit', $populasi->hashid) }}" class="btn btn-warning btn-sm">Sunting</a>
                                         <button type="button" onclick="destroy('{{ $populasi->hashid }}')" class="btn btn-danger btn-sm">Hapus</button>
                                     </div>
                                 </td>
