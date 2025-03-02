@@ -10,8 +10,8 @@
         </nav>
     </div><!-- End Page Title -->
 
-    <div class="container mt-5">
-        <h2 class="mb-4">Tambah Standar</h2>
+    <section class="section p-4">
+        <h3 class="mb-4">Tambah Standar</h3>
         <form action="{{ route('main.standar.store') }}" method="post">
             @csrf
             <div class="mb-3">
@@ -66,5 +66,5 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('main.standar') }}" class="btn btn-secondary">Kembali</a>
         </form>
-    </div>
+    </section>
 </x-app-layout>
