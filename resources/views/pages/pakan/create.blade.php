@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container mt-5">
         <h2 class="mb-4">Tambah Pakan</h2>
-        <form method="POST" action="{{ route('pages.pakan.store') }}">
+        <form method="POST" action="{{ route('main.pakan.store') }}">
             @csrf
             <div class="mb-3">
                 <label for="jenis" class="form-label">Jenis Pakan</label>
@@ -32,7 +32,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('pages.pakan.list') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('main.pakan') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
 </x-app-layout>
