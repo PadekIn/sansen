@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StandarController;
+use App\Http\Controllers\PakanController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function() {
@@ -13,4 +14,13 @@ Route::prefix('main')->group(function() {
         Route::patch('/update/{id}', [StandarController::class, 'update'])->name('main.standar.update');
         Route::delete('/delete/{id}', [StandarController::class, 'destroy'])->name('main.standar.delete');
     });
+});
+
+
+Route::prefix('pages')->group(function() {
+    Route::get('/', [PakanController::class, 'index'])->name('pages.pakan.list');
+    Route::get('/pakan/create', [PakanController::class, 'create'])->name('pages.pakan.create');
+    Route::post('/pakan/store', [PakanController::class, 'store'])->name('pages.pakan.store');
+    Route::get('/pakan/edit/{id}', [PakanController::class, 'edit'])->name('pages.pakan.edit');
+    Route::patch('/pakan/update/{id}', [PakanController::class, 'update'])->name('pages.pakan.update');
 });

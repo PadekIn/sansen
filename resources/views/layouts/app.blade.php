@@ -76,15 +76,13 @@
                                 </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/">
-                                <span class="icon wheat" aria-hidden="true">
-                                </span>Pakan
-                                </a>
+                            <a class="show-cat-btn" href="{{ route('pages.pakan.list') }}">
+                                <span class="icon wheat" aria-hidden="true"></span>Pakan
+                            </a>
                         </li>
                         <li>
                             <a class="show-cat-btn" href="/">
-                                <span class="icon report" aria-hidden="true">
-                                </span>Laporan
+                                <span class="icon report" aria-hidden="true"></span>Laporan
                             </a>
                         </li>
                 </div>
