@@ -18,7 +18,7 @@ class StandarController extends Controller
     }
 
     public function create() {
-        return view('pages.dashboard.dashboard');
+        return view('pages.performa.standar.create');
     }
 
     public function store(request $request) {
