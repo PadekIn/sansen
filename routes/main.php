@@ -14,13 +14,16 @@ Route::prefix('main')->group(function() {
         Route::patch('/update/{id}', [StandarController::class, 'update'])->name('main.standar.update');
         Route::delete('/delete/{id}', [StandarController::class, 'destroy'])->name('main.standar.delete');
     });
+
+    Route::prefix('pakan')->group(function() {
+        Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
+        Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
+        Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
+        Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
+        Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
+    });
+
 });
 
 
-Route::prefix('pages')->group(function() {
-    Route::get('/', [PakanController::class, 'index'])->name('pages.pakan.list');
-    Route::get('/pakan/create', [PakanController::class, 'create'])->name('pages.pakan.create');
-    Route::post('/pakan/store', [PakanController::class, 'store'])->name('pages.pakan.store');
-    Route::get('/pakan/edit/{id}', [PakanController::class, 'edit'])->name('pages.pakan.edit');
-    Route::patch('/pakan/update/{id}', [PakanController::class, 'update'])->name('pages.pakan.update');
-});
+

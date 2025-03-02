@@ -76,7 +76,7 @@
                                 </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="{{ route('pages.pakan.list') }}">
+                            <a href="{{ route('main.pakan') }}">
                                 <span class="icon wheat" aria-hidden="true"></span>Pakan
                             </a>
                         </li>
