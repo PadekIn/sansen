@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\StandarController;
 use App\Http\Controllers\PakanController;
+use App\Http\Controllers\ActualController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function() {
@@ -15,15 +16,22 @@ Route::prefix('main')->group(function() {
         Route::delete('/delete/{id}', [StandarController::class, 'destroy'])->name('main.standar.delete');
     });
 
-    Route::prefix('pakan')->group(function() {
-        Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
-        Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
-        Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
-        Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
-        Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
+    Route::prefix('actual')->group(function() {
+        Route::get('/', [ActualController::class, 'index'])->name('main.actual');
+        Route::get('/create', [ActualController::class, 'create'])->name('main.actual.create');
+        Route::post('/store', [ActualController::class, 'store'])->name('main.actual.store');
+        Route::get('/edit/{id}', [ActualController::class, 'edit'])->name('main.actual.edit');
+        Route::patch('/update/{id}', [ActualController::class, 'update'])->name('main.actual.update');
+        Route::delete('/delete/{id}', [ActualController::class, 'destroy'])->name('main.actual.delete');
     });
-
 });
 
 
-
+Route::prefix('pages')->group(function() {
+    Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
+    Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
+    Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
+    Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
+    Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
+    Route::delete('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
+});

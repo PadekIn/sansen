@@ -59,7 +59,7 @@
                                     <a href="{{ route('main.standar') }}">Standar</a>
                                 </li>
                                 <li>
-                                    <a href="">Actual</a>
+                                    <a href="{{ route('main.actual') }}">Actual</a>
                                 </li>
                             </ul>
                         </li>
