@@ -28,7 +28,7 @@ class PopulasiController extends Controller
         $request->validate([
             'jumlah' => 'required|integer',
             'berat' => 'required|numeric',
-            'umur_akhir' => 'required|integer',
+            'umur_akhir' => 'required|numeric',
             'grade_doc' => 'required|string|max:255',
             'bw_doc' => 'required|numeric',
             'asal_doc' => 'required|string|max:255',
@@ -60,7 +60,7 @@ class PopulasiController extends Controller
         $request->validate([
             'jumlah' => 'required|integer',
             'berat' => 'required|numeric',
-            'umur_akhir' => 'required|integer',
+            'umur_akhir' => 'required|numeric',
             'grade_doc' => 'required|string|max:255',
             'bw_doc' => 'required|numeric',
             'asal_doc' => 'required|string|max:255',

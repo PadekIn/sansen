@@ -16,11 +16,11 @@
                         <a href="{{ route('main.actual.create') }}" class="btn btn-primary">Tambah Performa Actual</a>
                     </h5>
                 </div>
-                @if(session('success'))
+                <!-- @if(session('success'))
                     <div class="alert alert-success">
                         {{ session('success') }}
                     </div>
-                @endif
+                @endif -->
                 <table class="table">
                     <thead class="table-light">
                         <tr>
@@ -49,11 +49,8 @@
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('main.actual.edit', $actual->hashid) }}" class="btn btn-warning btn-sm me-2">Edit</a>
-                                        <form action="{{ route('main.actual.delete', $actual->hashid) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Hapus</button>
-                                        </form>
+                                        <button type="button" onclick="destroy('{{ $actual->hashid }}')"
+                                        class="btn btn-sm btn-danger">Delete</button>
                                     </div>
                                 </td>
                             </tr>
