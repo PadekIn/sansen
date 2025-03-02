@@ -32,7 +32,7 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Perbarui</button>
             <a href="{{ route('main.pakan') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>

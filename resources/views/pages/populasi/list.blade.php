@@ -1,48 +1,76 @@
 <x-app-layout>
-    <div class="container mt-5">
-        <h2 class="mb-4">Daftar Populasi</h2>
-        <a href="{{ route('main.populasi.create') }}" class="btn btn-primary mb-3">Tambah Populasi</a>
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+    <div class="pagetitle px-4">
+        <h1>Daftar Populasi</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('main.populasi') }}">Populasi</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section p-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">
+                        <a href="{{ route('main.populasi.create') }}" class="btn btn-primary">Tambah Populasi</a>
+                    </h5>
+                </div>
+                <table class="table">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Jumlah</th>
+                            <th>Berat</th>
+                            <th>Umur Akhir</th>
+                            <th>Grade DOC</th>
+                            <th>BW DOC</th>
+                            <th>Asal DOC</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($populasis as $populasi)
+                            <tr>
+                                <td>{{ $populasi->jumlah }}</td>
+                                <td>{{ $populasi->berat }}</td>
+                                <td>{{ $populasi->umur_akhir }}</td>
+                                <td>{{ $populasi->grade_doc }}</td>
+                                <td>{{ $populasi->bw_doc }}</td>
+                                <td>{{ $populasi->asal_doc }}</td>
+                                <td>{{ $populasi->check_in }}</td>
+                                <td>{{ $populasi->check_out }}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="{{ route('main.populasi.edit', $populasi->hashid) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <button type="button" onclick="destroy('{{ $populasi->hashid }}')" class="btn btn-danger btn-sm">Hapus</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-        @endif
-        <table class="table">
-            <thead class="table-light">
-                <tr>
-                    <th>Jumlah</th>
-                    <th>Berat</th>
-                    <th>Umur Akhir</th>
-                    <th>Grade DOC</th>
-                    <th>BW DOC</th>
-                    <th>Asal DOC</th>
-                    <th>Check In</th>
-                    <th>Check Out</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($populasis as $populasi)
-                    <tr>
-                        <td>{{ $populasi->jumlah }}</td>
-                        <td>{{ $populasi->berat }}</td>
-                        <td>{{ $populasi->umur_akhir }}</td>
-                        <td>{{ $populasi->grade_doc }}</td>
-                        <td>{{ $populasi->bw_doc }}</td>
-                        <td>{{ $populasi->asal_doc }}</td>
-                        <td>{{ $populasi->check_in }}</td>
-                        <td>{{ $populasi->check_out }}</td>
-                        <td>
-                            <a href="{{ route('main.populasi.edit', $populasi->hashid) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('main.populasi.delete', $populasi->hashid) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+        </div>
+    </section>
+
+    <script>
+        function destroy(id) {
+            Swal.fire({
+                title: 'Apakah Kamu Yakin?',
+                text: "Ingin menghapus data Populasi Ini!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Yakin!',
+                cancelButtonText: 'Tidak, Batalkan!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/main/populasi/delete/${id}`;
+                }
+            });
+        }
+    </script>
 </x-app-layout>

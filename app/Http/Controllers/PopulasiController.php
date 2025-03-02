@@ -25,18 +25,18 @@ class PopulasiController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $request->validate([
-                'jumlah' => 'required|integer',
-                'berat' => 'required|numeric',
-                'umur_akhir' => 'required|integer',
-                'grade_doc' => 'required|string|max:255',
-                'bw_doc' => 'required|numeric',
-                'asal_doc' => 'required|string|max:255',
-                'check_in' => 'required|date',
-                'check_out' => 'required|date',
-            ]);
+        $request->validate([
+            'jumlah' => 'required|integer',
+            'berat' => 'required|numeric',
+            'umur_akhir' => 'required|integer',
+            'grade_doc' => 'required|string|max:255',
+            'bw_doc' => 'required|numeric',
+            'asal_doc' => 'required|string|max:255',
+            'check_in' => 'required|date',
+            'check_out' => 'required|date',
+        ]);
 
+        try {
             Populasi::create($request->all());
             return redirect()->route('main.populasi')->with('success', 'Data Populasi created successfully');
         } catch (\Throwable $th) {
@@ -57,18 +57,18 @@ class PopulasiController extends Controller
 
     public function update(Request $request, $id)
     {
-        try {
-            $request->validate([
-                'jumlah' => 'required|integer',
-                'berat' => 'required|numeric',
-                'umur_akhir' => 'required|integer',
-                'grade_doc' => 'required|string|max:255',
-                'bw_doc' => 'required|numeric',
-                'asal_doc' => 'required|string|max:255',
-                'check_in' => 'required|date',
-                'check_out' => 'required|date',
-            ]);
+        $request->validate([
+            'jumlah' => 'required|integer',
+            'berat' => 'required|numeric',
+            'umur_akhir' => 'required|integer',
+            'grade_doc' => 'required|string|max:255',
+            'bw_doc' => 'required|numeric',
+            'asal_doc' => 'required|string|max:255',
+            'check_in' => 'required|date',
+            'check_out' => 'required|date',
+        ]);
 
+        try {
             $unhashed = Hashids::decode($id)[0];
             $populasi = Populasi::findOrFail($unhashed);
             $populasi->update($request->all());

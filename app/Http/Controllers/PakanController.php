@@ -25,14 +25,14 @@ class PakanController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $request->validate([
-                'jenis' => 'required|string|max:75',
-                'jumlah' => 'required|integer',
-                'tgl_beli' => 'required|date',
-                'keterangan' => 'nullable|string|max:255',
-            ]);
+        $validator = $request->validate([
+            'jenis' => 'required|string|max:75',
+            'jumlah' => 'required|integer',
+            'tgl_beli' => 'required|date',
+            'keterangan' => 'nullable|string|max:255',
+        ]);
 
+        try {
             Pakan::create($request->all());
             return redirect()->route('main.pakan')->with('success', 'Pakan created successfully');
         } catch (\Throwable $th) {
@@ -53,14 +53,14 @@ class PakanController extends Controller
 
     public function update(Request $request, $id)
     {
-        try {
-            $request->validate([
-                'jenis' => 'required|string|max:75',
-                'jumlah' => 'required|integer',
-                'tgl_beli' => 'required|date',
-                'keterangan' => 'nullable|string|max:255',
-            ]);
+        $validator = $request->validate([
+            'jenis' => 'required|string|max:75',
+            'jumlah' => 'required|integer',
+            'tgl_beli' => 'required|date',
+            'keterangan' => 'nullable|string|max:255',
+        ]);
 
+        try {
             $unhashed = Hashids::decode($id)[0];
             $pakan = Pakan::findOrFail($unhashed);
             $pakan->update($request->all());

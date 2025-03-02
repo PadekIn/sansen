@@ -27,18 +27,18 @@ class ActualController extends Controller
 
     public function store(Request $request)
     {
-        try {
-            $request->validate([
-                'populasi_id' => 'required|exists:populasis,id',
-                'fcr' => 'required|numeric',
-                'fi' => 'required|numeric',
-                'fe' => 'required|numeric',
-                'dep' => 'required|numeric',
-                'abw' => 'required|numeric',
-                'adg' => 'required|integer',
-                'ip' => 'required|integer',
-            ]);
+        $request->validate([
+            'populasi_id' => 'required|exists:populasis,id',
+            'fcr' => 'required|numeric',
+            'fi' => 'required|numeric',
+            'fe' => 'required|numeric',
+            'dep' => 'required|numeric',
+            'abw' => 'required|numeric',
+            'adg' => 'required|integer',
+            'ip' => 'required|integer',
+        ]);
 
+        try {
             Performa_actual::create($request->all());
             return redirect()->route('main.actual')->with('success', 'Data Actual created successfully');
         } catch (\Throwable $th) {
@@ -60,18 +60,18 @@ class ActualController extends Controller
 
     public function update(Request $request, $id)
     {
-        try {
-            $request->validate([
-                'populasi_id' => 'required|exists:populasis,id',
-                'fcr' => 'required|numeric',
-                'fi' => 'required|numeric',
-                'fe' => 'required|numeric',
-                'dep' => 'required|numeric',
-                'abw' => 'required|numeric',
-                'adg' => 'required|integer',
-                'ip' => 'required|integer',
-            ]);
+        $request->validate([
+            'populasi_id' => 'required|exists:populasis,id',
+            'fcr' => 'required|numeric',
+            'fi' => 'required|numeric',
+            'fe' => 'required|numeric',
+            'dep' => 'required|numeric',
+            'abw' => 'required|numeric',
+            'adg' => 'required|integer',
+            'ip' => 'required|integer',
+        ]);
 
+        try {
             $unhashed = Hashids::decode($id)[0];
             $actual = Performa_actual::findOrFail($unhashed);
             $actual->update($request->all());
