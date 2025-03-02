@@ -1,6 +1,17 @@
 <x-app-layout>
-    <div class="container mt-5">
-        <h2 class="mb-4">Edit Standar</h2>
+    <div class="pagetitle px-4">
+        <h1> Edit Standar Performa</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('main.standar') }}">Standar Performa</a></li>
+                <li class="breadcrumb-item">Edit Standar Performa</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section p-4">
+        <h3 class="mb-4">Edit Standar</h3>
         <form action="{{ route('main.standar.update', $standar->hashid) }}" method="post">
             @csrf
             @method('PATCH')
@@ -56,5 +67,5 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('main.standar') }}" class="btn btn-secondary">Kembali</a>
         </form>
-    </div>
+    </section>
 </x-app-layout>
