@@ -43,13 +43,13 @@
                             <td>{{ $standar->adg }}</td>
                             <td>{{ $standar->ip }}</td>
                             <td class="no-print">
-                                {{-- <div class="d-flex">
-                                    <a href="{{ route('', $aset->hashid) }}"
+                                <div class="d-flex">
+                                    <a href="{{ route('main.standar.edit', $standar->hashid) }}"
                                         class="btn btn-sm btn-warning">Edit</a>
                                     <div style="width: 10px;"></div>
-                                    <button type="button" onclick="destroy('{{ $aset->hashid }}')"
+                                    <button type="button" onclick="destroy('{{ $standar->hashid }}')"
                                         class="btn btn-sm btn-danger">Delete</button>
-                                </div> --}}
+                                </div>
                             </td>
                         </tr>
                     @endforeach
@@ -66,7 +66,7 @@
     function destroy(id) {
         Swal.fire({
             title: 'Apakah Kamu Yakin?',
-            text: "Ingin menghapus data Aset Ini!",
+            text: "Ingin menghapus data Standar peforma Ini!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -76,7 +76,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 // Perform the delete action here
-                window.location.href = `/admin/aset/destroy/${id}`;
+                window.location.href = `/main/standar/delete/${id}`;
             }
         })
     };

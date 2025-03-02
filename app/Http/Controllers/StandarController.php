@@ -29,6 +29,7 @@ class StandarController extends Controller
                 'fcr' => 'required|decimal:0,3',
                 'fi'  => 'required|decimal:0,3',
                 'fe'  => 'required|decimal:0,3',
+                'dep' => 'required|decimal:0,3',
                 'abw' => 'required|decimal:0,3',
                 'adg' => 'required|decimal:0,3',
                 'ip'  => 'required|decimal:0,3'
@@ -60,13 +61,13 @@ class StandarController extends Controller
             $unhashed = Hashids::decode($id)[0];
             $standar = Standar_peforma::find($unhashed);
             $request->validate([
-                'fcr' => 'required',
-                'fi' => 'required',
-                'fe' => 'required',
-                'dep' => 'required',
-                'abw' => 'required',
-                'adg' => 'required',
-                'ip' => 'required'
+                'fcr' => 'required|decimal:0,3',
+                'fi'  => 'required|decimal:0,3',
+                'fe'  => 'required|decimal:0,3',
+                'dep' => 'required|decimal:0,3',
+                'abw' => 'required|decimal:0,3',
+                'adg' => 'required|decimal:0,3',
+                'ip'  => 'required|decimal:0,3'
             ]);
             $standar->update($request->all());
             return redirect()->route('main.standar')->with('success', 'Standar Performa updated successfully');

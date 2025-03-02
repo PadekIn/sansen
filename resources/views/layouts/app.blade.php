@@ -123,8 +123,8 @@
                                                                 this.closest('form').submit();">
                                             <i data-feather="log-out" aria-hidden="true"></i>
                                             <span>Log out</span>
-                                        </a></li>
-
+                                        </a>
+                                    </li>
                                 </form>
                             </ul>
                         </div>

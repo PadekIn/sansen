@@ -23,7 +23,7 @@ Route::prefix('main')->group(function() {
         Route::post('/store', [StandarController::class, 'store'])->name('main.standar.store');
         Route::get('/edit/{id}', [StandarController::class, 'edit'])->name('main.standar.edit');
         Route::patch('/update/{id}', [StandarController::class, 'update'])->name('main.standar.update');
-        Route::delete('/delete/{id}', [StandarController::class, 'destroy'])->name('main.standar.delete');
+        Route::get('/delete/{id}', [StandarController::class, 'destroy'])->name('main.standar.delete');
     });
 
     Route::prefix('actual')->group(function() {
@@ -34,14 +34,13 @@ Route::prefix('main')->group(function() {
         Route::patch('/update/{id}', [ActualController::class, 'update'])->name('main.actual.update');
         Route::delete('/delete/{id}', [ActualController::class, 'destroy'])->name('main.actual.delete');
     });
-});
 
-
-Route::prefix('pages')->group(function() {
-    Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
-    Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
-    Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
-    Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
-    Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
-    Route::delete('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
+    Route::prefix('pages')->group(function() {
+        Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
+        Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
+        Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
+        Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
+        Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
+        Route::delete('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
+    });
 });
