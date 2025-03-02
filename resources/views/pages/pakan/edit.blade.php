@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container mt-5">
         <h2 class="mb-4">Edit Pakan</h2>
-        <form method="POST" action="{{ route('pages.pakan.update', $pakan->hashid) }}">
+        <form method="POST" action="{{ route('main.pakan.update', $pakan->hashid) }}">
             @csrf
             @method('PATCH')
             <div class="mb-3">
@@ -33,7 +33,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('pages.pakan.list') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('main.pakan') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
 </x-app-layout>
