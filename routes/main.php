@@ -21,6 +21,7 @@ Route::prefix('main')->group(function() {
         Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
         Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
         Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
+        Route::delete('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
     });
 
 });
