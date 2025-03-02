@@ -1,4 +1,14 @@
 <x-app-layout>
+    <div class="pagetitle px-4">
+        <h1> Tambah Standar Performa</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('main.standar') }}">Standar Performa</a></li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
     <div class="container mt-5">
         <h2 class="mb-4">Tambah Standar</h2>
         <form action="{{ route('main.standar.store') }}" method="post">
