@@ -14,9 +14,8 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="card-title">
-                    Lorem ipsum dolor sit amet.
-                    {{-- <a href="{{ route('') }}" class="btn btn-primary">Tambah Standar Performa
-                        Baru</a> --}}
+                    <a href="{{ route('main.standar.create') }}" class="btn btn-primary">Tambah Standar Performa
+                        Baru</a>
                 </h5>
             </div>
             <!-- Table with stripped rows -->

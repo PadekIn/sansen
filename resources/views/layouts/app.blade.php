@@ -125,6 +125,8 @@
                                             <i data-feather="log-out" aria-hidden="true"></i>
                                             <span>Log out</span>
                                         </a></li>
+
+                                </form>
                             </ul>
                         </div>
                     </div>

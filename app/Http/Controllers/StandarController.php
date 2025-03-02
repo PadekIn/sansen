@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Standar_peforma;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Vinkla\Hashids\Facades\Hashids;
 
 class StandarController extends Controller
@@ -24,19 +25,23 @@ class StandarController extends Controller
     public function store(request $request) {
         try {
             // tambahin eror handling untuk validasi, kalau eror return back with eror
-            $request->validate([
-                'fcr' => 'required',
-                'fi' => 'required',
-                'fe' => 'required',
-                'dep' => 'required',
-                'abw' => 'required',
-                'adg' => 'required',
-                'ip' => 'required'
+            $validator = Validator::make($request->all(), [
+                'fcr' => 'required|decimal:0,3',
+                'fi'  => 'required|decimal:0,3',
+                'fe'  => 'required|decimal:0,3',
+                'abw' => 'required|decimal:0,3',
+                'adg' => 'required|decimal:0,3',
+                'ip'  => 'required|decimal:0,3'
             ]);
+
+            if ($validator->fails()) {
+                return back()->withErrors($validator)->withInput();
+            }
+
             Standar_peforma::create($request->all());
-            return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa created successfully');
+            return redirect()->route('main.standar')->with('success', 'Standar Performa created successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('login')->with('error', 'Something went wrong');
+            return redirect()->route('main.standar')->with('error', 'Standar Performa failed to create');
         }
     }
 
@@ -46,7 +51,7 @@ class StandarController extends Controller
             $standar = Standar_peforma::find($unhashed);
             return view('pages.performa.standar.edit', compact('standar'));
         } catch (\Throwable $th) {
-            return redirect()->route('login')->with('error', 'Something went wrong');
+            return redirect()->route('main.standar')->with('error', 'Something went wrong');
         }
     }
 
@@ -64,9 +69,9 @@ class StandarController extends Controller
                 'ip' => 'required'
             ]);
             $standar->update($request->all());
-            return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa updated successfully');
+            return redirect()->route('main.standar')->with('success', 'Standar Performa updated successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('login')->with('error', 'Something went wrong');
+            return redirect()->route('main.standar')->with('error', 'Something went wrong');
         }
     }
 
@@ -75,9 +80,9 @@ class StandarController extends Controller
             $unhashed = Hashids::decode($id)[0];
             $standar = Standar_peforma::find($unhashed);
             $standar->delete();
-            return redirect()->route('pages.performa.standar.list')->with('success', 'Standar Performa deleted successfully');
+            return redirect()->route('main.standar')->with('success', 'Standar Performa deleted successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('login')->with('error', 'Something went wrong');
+            return redirect()->route('main.standar')->with('error', 'Something went wrong');
         }
     }
 }

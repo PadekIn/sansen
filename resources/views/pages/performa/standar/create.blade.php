@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container mt-5">
         <h2 class="mb-4">Tambah Standar</h2>
-        <form method="POST" action="{{ route('main.standar.store') }}">
+        <form action="{{ route('main.standar.store') }}" method="post">
             @csrf
             <div class="mb-3">
                 <label for="fcr" class="form-label">fcr</label>
