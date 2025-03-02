@@ -14,7 +14,7 @@ Route::prefix('main')->group(function() {
         Route::post('/store', [PopulasiController::class, 'store'])->name('main.populasi.store');
         Route::get('/edit/{id}', [PopulasiController::class, 'edit'])->name('main.populasi.edit');
         Route::patch('/update/{id}', [PopulasiController::class, 'update'])->name('main.populasi.update');
-        Route::delete('/delete/{id}', [PopulasiController::class, 'destroy'])->name('main.populasi.delete');
+        Route::get('/delete/{id}', [PopulasiController::class, 'destroy'])->name('main.populasi.delete');
     });
 
     Route::prefix('standar')->group(function(){
@@ -32,15 +32,15 @@ Route::prefix('main')->group(function() {
         Route::post('/store', [ActualController::class, 'store'])->name('main.actual.store');
         Route::get('/edit/{id}', [ActualController::class, 'edit'])->name('main.actual.edit');
         Route::patch('/update/{id}', [ActualController::class, 'update'])->name('main.actual.update');
-        Route::delete('/delete/{id}', [ActualController::class, 'destroy'])->name('main.actual.delete');
+        Route::get('/delete/{id}', [ActualController::class, 'destroy'])->name('main.actual.delete');
     });
 
-    Route::prefix('pages')->group(function() {
+    Route::prefix('pakan')->group(function() {
         Route::get('/', [PakanController::class, 'index'])->name('main.pakan');
         Route::get('/create', [PakanController::class, 'create'])->name('main.pakan.create');
         Route::post('/store', [PakanController::class, 'store'])->name('main.pakan.store');
         Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
         Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
-        Route::delete('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
+        Route::get('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
     });
 });

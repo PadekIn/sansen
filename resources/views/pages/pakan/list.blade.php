@@ -36,7 +36,8 @@
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('main.pakan.edit', $pakan->hashid) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
-                                        <button type="button" onclick="destroy('{{ $pakan->hashid }}')" class="btn btn-danger btn-sm">Hapus</button>
+                                        <button type="button" onclick="destroy('{{ $pakan->hashid }}')"
+                                            class="btn btn-danger btn-sm">Hapus</button>
                                     </div>
                                 </td>
                             </tr>
