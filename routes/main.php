@@ -1,11 +1,21 @@
 <?php
 
+use App\Http\Controllers\PopulasiController;
 use App\Http\Controllers\StandarController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\ActualController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function() {
+
+    Route::prefix('populasi')->group(function() {
+        Route::get('/', [PopulasiController::class, 'index'])->name('main.populasi');
+        Route::get('/create', [PopulasiController::class, 'create'])->name('main.populasi.create');
+        Route::post('/store', [PopulasiController::class, 'store'])->name('main.populasi.store');
+        Route::get('/edit/{id}', [PopulasiController::class, 'edit'])->name('main.populasi.edit');
+        Route::patch('/update/{id}', [PopulasiController::class, 'update'])->name('main.populasi.update');
+        Route::delete('/delete/{id}', [PopulasiController::class, 'destroy'])->name('main.populasi.delete');
+    });
 
     Route::prefix('standar')->group(function(){
         Route::get('/', [StandarController::class, 'index'])->name('main.standar');
