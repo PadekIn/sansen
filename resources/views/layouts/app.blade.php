@@ -59,14 +59,13 @@
                                     <a href="{{ route('main.standar') }}">Standar</a>
                                 </li>
                                 <li>
-                                    <a href="">Actual</a>
+                                    <a href="{{ route('main.actual') }}">Actual</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/">
-                                <span class="icon pop" aria-hidden="true">
-                                </span>Populasi
+                            <a href="{{ route('main.populasi') }}">
+                                <span class="icon pop" aria-hidden="true"></span>Populasi
                                 </a>
                         </li>
                         <li>
