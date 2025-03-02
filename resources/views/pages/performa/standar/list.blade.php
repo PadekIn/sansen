@@ -1,10 +1,10 @@
 <x-app-layout>
 <div class="pagetitle px-4">
-    <h1>Standar Performa</h1>
+    <h1> Data Standar Performa</h1>
     <nav>
         <ol class="breadcrumb">
-            {{-- <li class="breadcrumb-item"><a href="{{ route('') }}">Home</a></li> --}}
-            <li class="breadcrumb-item">Aset</li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+            <li class="breadcrumb-item">Standar Performa</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->
