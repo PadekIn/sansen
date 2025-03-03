@@ -41,7 +41,7 @@
                 <div class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="active" href="/">
+                            <a class="{{ Request::is('/dashboard') ? 'active' : '' }}" href="/">
                                 <span class="icon home" aria-hidden="true"></span>
                                 Beranda
                             </a>
@@ -56,7 +56,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="{{ route('main.standar') }}">Standar</a>
+                                    <a class="{{ Request::is('main/standar') ? 'active' : '' }}" href="{{ route('main.standar') }}">Standar</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('main.actual') }}">Actual</a>
@@ -69,13 +69,13 @@
                                 </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/">
+                            <a class="show-cat-btn" href="{{ route('main.perkembangan') }}">
                                 <span class="icon activity" aria-hidden="true">
                                 </span>Perkembangan
                                 </a>
                         </li>
                         <li>
-                            <a href="{{ route('main.pakan') }}">
+                            <a class="{{ Request::is('main/pakan') ? 'active' : '' }}" href="{{ route('main.pakan') }}">
                                 <span class="icon wheat" aria-hidden="true"></span>Pakan
                             </a>
                         </li>

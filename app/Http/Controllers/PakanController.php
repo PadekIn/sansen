@@ -79,7 +79,7 @@ class PakanController extends Controller
             $pakan->delete();
             return redirect()->route('main.pakan')->with('success', 'Pakan deleted successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.pakan')->with('error', 'Server Error, data pakan gagal dihapus');
+            return redirect()->route('main.pakan')->with('error', $th->getMessage());
         }
     }
 }
