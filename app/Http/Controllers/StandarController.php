@@ -42,7 +42,7 @@ class StandarController extends Controller
             Standar_peforma::create($request->all());
             return redirect()->route('main.standar')->with('success', 'Standar Performa created successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.standar')->with('error', 'Standar Performa failed to create');
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
@@ -72,7 +72,7 @@ class StandarController extends Controller
             $standar->update($request->all());
             return redirect()->route('main.standar')->with('success', 'Standar Performa updated successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.standar')->with('error', 'Something went wrong');
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
