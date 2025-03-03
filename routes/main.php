@@ -4,6 +4,7 @@ use App\Http\Controllers\PopulasiController;
 use App\Http\Controllers\StandarController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\ActualController;
+use App\Http\Controllers\PerkembanganController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function() {
@@ -42,5 +43,14 @@ Route::prefix('main')->group(function() {
         Route::get('/edit/{id}', [PakanController::class, 'edit'])->name('main.pakan.edit');
         Route::patch('/update/{id}', [PakanController::class, 'update'])->name('main.pakan.update');
         Route::get('/delete/{id}', [PakanController::class, 'destroy'])->name('main.pakan.delete');
+    });
+
+    Route::prefix('perkembangan')->group(function() {
+        Route::get('/', [PerkembanganController::class, 'index'])->name('main.perkembangan');
+        Route::get('/create', [PerkembanganController::class, 'create'])->name('main.perkembangan.create');
+        Route::post('/store', [PerkembanganController::class, 'store'])->name('main.perkembangan.store');
+        Route::get('/edit/{id}', [PerkembanganController::class, 'edit'])->name('main.perkembangan.edit');
+        Route::patch('/update/{id}', [PerkembanganController::class, 'update'])->name('main.perkembangan.update');
+        Route::get('/delete/{id}', [PerkembanganController::class, 'destroy'])->name('main.perkembangan.delete');
     });
 });
