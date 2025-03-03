@@ -7,6 +7,7 @@ use App\Models\Perkembangan;
 use App\Models\Populasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Vinkla\Hashids\Facades\Hashids;
 
 class PerkembanganController extends Controller
 {
@@ -68,7 +69,6 @@ class PerkembanganController extends Controller
 
     public function update(Request $request, $id) {
         try {
-            $perkembangan = Perkembangan::find($id);
             $request->validate([
                 'populasi_id' => 'required|exists:populasis,id',
                 'umur' => 'required|integer',
@@ -81,11 +81,23 @@ class PerkembanganController extends Controller
                 'abw_normal_atas' => 'required|numeric',
                 'abw_normal_bawah' => 'required|numeric',
             ]);
-
+            $unhashed = Hashids::decode($id)[0];
+            $perkembangan = Perkembangan::find($unhashed);
             $perkembangan->update($request->all());
             return redirect()->route('main.perkembangan')->with('success', 'Perkembangan updated successfully');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());
+        }
+    }
+
+    public function destroy($id) {
+        try {
+            $unhashed = Hashids::decode($id)[0];
+            $perkembangan = Perkembangan::find($unhashed);
+            $perkembangan->delete();
+            return redirect()->route('main.perkembangan')->with('success', 'Perkembangan deleted successfully');
+        } catch (\Throwable $th) {
+            return redirect()->route('main.perkembangan')->with('error', 'Something went wrong');
         }
     }
 }
