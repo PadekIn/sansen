@@ -54,4 +54,15 @@ class PerkembanganController extends Controller
             return redirect()->back()->with('error', $th->getMessage());
         }
     }
+
+    public function edit($id) {
+        try {
+            $perkembangan = Perkembangan::find($id);
+            $populasis = Populasi::all();
+            $pakans = Pakan::all();
+            return view('pages.perkembangan.edit', compact('perkembangan', 'populasis', 'pakans'));
+        } catch (\Throwable $th) {
+            return redirect()->route('main.perkembangan')->with('error', 'Something went wrong');
+        }
+    }
 }
