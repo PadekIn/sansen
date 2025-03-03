@@ -65,4 +65,27 @@ class PerkembanganController extends Controller
             return redirect()->route('main.perkembangan')->with('error', 'Something went wrong');
         }
     }
+
+    public function update(Request $request, $id) {
+        try {
+            $perkembangan = Perkembangan::find($id);
+            $request->validate([
+                'populasi_id' => 'required|exists:populasis,id',
+                'umur' => 'required|integer',
+                'kematian_atas' => 'required|integer',
+                'kematian_bawah' => 'required|integer',
+                'id_tipe_pakan_atas' => 'nullable|exists:pakans,id',
+                'pakan_atas' => 'required|integer',
+                'id_tipe_pakan_bawah' => 'nullable|exists:pakans,id',
+                'pakan_bawah' => 'required|integer',
+                'abw_normal_atas' => 'required|numeric',
+                'abw_normal_bawah' => 'required|numeric',
+            ]);
+
+            $perkembangan->update($request->all());
+            return redirect()->route('main.perkembangan')->with('success', 'Perkembangan updated successfully');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', $th->getMessage());
+        }
+    }
 }
