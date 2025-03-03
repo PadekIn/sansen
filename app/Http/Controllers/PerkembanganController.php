@@ -58,7 +58,8 @@ class PerkembanganController extends Controller
 
     public function edit($id) {
         try {
-            $perkembangan = Perkembangan::find($id);
+            $unhashed = Hashids::decode($id)[0];
+            $perkembangan = Perkembangan::find($unhashed);
             $populasis = Populasi::all();
             $pakans = Pakan::all();
             return view('pages.perkembangan.edit', compact('perkembangan', 'populasis', 'pakans'));
