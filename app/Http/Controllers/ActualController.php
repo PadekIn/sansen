@@ -62,11 +62,11 @@ class ActualController extends Controller
     {
         $request->validate([
             'populasi_id' => 'required|exists:populasis,id',
-            'fcr' => 'required|numeric',
-            'fi' => 'required|numeric',
-            'fe' => 'required|numeric',
-            'dep' => 'required|numeric',
-            'abw' => 'required|numeric',
+            'fcr' => 'required|decimal',
+            'fi' => 'required|decimal',
+            'fe' => 'required|decimal',
+            'dep' => 'required|decimal',
+            'abw' => 'required|decimal',
             'adg' => 'required|integer',
             'ip' => 'required|integer',
         ]);

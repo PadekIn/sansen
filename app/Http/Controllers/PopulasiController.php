@@ -59,11 +59,11 @@ class PopulasiController extends Controller
     {
         $request->validate([
             'jumlah' => 'required|integer',
-            'berat' => 'required|numeric',
-            'umur_akhir' => 'required|numeric',
+            'berat' => 'required|int',
+            'umur_akhir' => 'required|decimal',
             'grade_doc' => 'required|string|max:255',
-            'bw_doc' => 'required|numeric',
-            'asal_doc' => 'required|string|max:255',
+            'bw_doc' => 'required|int',
+            'asal_doc' => 'required|varchar|max:255',
             'check_in' => 'required|date',
             'check_out' => 'required|date',
         ]);

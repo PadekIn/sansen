@@ -54,10 +54,10 @@ class PakanController extends Controller
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'jenis' => 'required|string|max:75',
+            'jenis' => 'required|varchar|max:75',
             'jumlah' => 'required|integer',
             'tgl_beli' => 'required|date',
-            'keterangan' => 'nullable|string|max:255',
+            'keterangan' => 'nullable|varchar|max:255',
         ]);
 
         try {
