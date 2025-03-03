@@ -12,6 +12,7 @@ class PerkembanganController extends Controller
     public function index() {
         try {
             $perkembangans = Perkembangan::with('populasi', 'pakanAtas', 'pakanBawah')->get();
+            return view('pages.perkembangan.list', compact('perkembangans'));
         } catch (\Throwable $th) {
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
