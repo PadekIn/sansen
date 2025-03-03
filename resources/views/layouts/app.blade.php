@@ -69,7 +69,7 @@
                                 </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/">
+                            <a class="show-cat-btn" href="{{ route('main.perkembangan') }}">
                                 <span class="icon activity" aria-hidden="true">
                                 </span>Perkembangan
                                 </a>
