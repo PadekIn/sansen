@@ -29,13 +29,13 @@ class ActualController extends Controller
     {
         $request->validate([
             'populasi_id' => 'required|exists:populasis,id',
-            'fcr' => 'required|numeric',
-            'fi' => 'required|numeric',
-            'fe' => 'required|numeric',
-            'dep' => 'required|numeric',
-            'abw' => 'required|numeric',
-            'adg' => 'required|integer',
-            'ip' => 'required|integer',
+            'fcr' => 'required|decimal:0,3',
+            'fi' => 'required|decimal:0,3',
+            'fe' => 'required|decimal:0,3',
+            'dep' => 'required|decimal:0,3',
+            'abw' => 'required|decimal:0,3',
+            'adg' => 'required|decimal:0,3',
+            'ip' => 'required|decimal:0,3',
         ]);
 
         try {
@@ -62,13 +62,13 @@ class ActualController extends Controller
     {
         $request->validate([
             'populasi_id' => 'required|exists:populasis,id',
-            'fcr' => 'required|decimal',
-            'fi' => 'required|decimal',
-            'fe' => 'required|decimal',
-            'dep' => 'required|decimal',
-            'abw' => 'required|decimal',
-            'adg' => 'required|integer',
-            'ip' => 'required|integer',
+            'fcr' => 'required|decimal:0,3',
+            'fi' => 'required|decimal:0,3',
+            'fe' => 'required|decimal:0,3',
+            'dep' => 'required|decimal:0,3',
+            'abw' => 'required|decimal:0,3',
+            'adg' => 'required|decimal:0,3',
+            'ip' => 'required|decimal:0,3',
         ]);
 
         try {
