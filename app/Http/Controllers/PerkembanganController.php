@@ -41,8 +41,8 @@ class PerkembanganController extends Controller
                 'pakan_atas' => 'required|integer',
                 'id_tipe_pakan_bawah' => 'nullable|exists:pakans,id',
                 'pakan_bawah' => 'required|integer',
-                'abw_normal_atas' => 'required|numeric',
-                'abw_normal_bawah' => 'required|numeric',
+                'abw_normal_atas' => 'required|decimal:0,3',
+                'abw_normal_bawah' => 'required|decimal:0,3',
             ]);
 
             if ($validator->fails()) {
@@ -79,8 +79,8 @@ class PerkembanganController extends Controller
                 'pakan_atas' => 'required|integer',
                 'id_tipe_pakan_bawah' => 'nullable|exists:pakans,id',
                 'pakan_bawah' => 'required|integer',
-                'abw_normal_atas' => 'required|numeric',
-                'abw_normal_bawah' => 'required|numeric',
+                'abw_normal_atas' => 'required|decimal:0,3',
+                'abw_normal_bawah' => 'required|decimal:0,3',
             ]);
             $unhashed = Hashids::decode($id)[0];
             $perkembangan = Perkembangan::find($unhashed);
