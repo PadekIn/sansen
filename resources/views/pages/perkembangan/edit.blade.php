@@ -19,7 +19,7 @@
                 <select class="form-control" id="populasi_id" name="populasi_id">
                     <option value="">Pilih Populasi</option>
                     @foreach($populasis as $populasi)
-                        <option value="{{ $populasi->id }}" {{ $populasi->id == $actual->populasi_id ? 'selected' : '' }}>{{ $populasi->jumlah }}</option>
+                        <option value="{{ $populasi->id }}" {{ $populasi->id == $perkembangan->populasi_id ? 'selected' : '' }}>{{ $populasi->jumlah }}</option>
                     @endforeach
                 </select>
                 @error('populasi_id')
