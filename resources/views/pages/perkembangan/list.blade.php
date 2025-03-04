@@ -72,7 +72,7 @@
             function destroy(id) {
                 Swal.fire({
                     title: 'Apakah Kamu Yakin?',
-                    text: "Ingin menghapus data Standar peforma Ini!",
+                    text: "Ingin menghapus data Perkembangan Ini!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
