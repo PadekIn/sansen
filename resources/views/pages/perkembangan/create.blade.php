@@ -86,14 +86,14 @@
             </div>
             <div class="mb-3">
                 <label for="abw_normal_atas" class="form-label">Abw Normal Atas</label>
-                <input type="number" class="form-control" id="abw_normal_atas" name="abw_normal_atas">
+                <input type="number" step="0.001" min="0" class="form-control" id="abw_normal_atas" name="abw_normal_atas">
                 @error('abw_normal_atas')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
                 <label for="abw_normal_bawah" class="form-label">Abw Normal Bawah</label>
-                <input type="number" class="form-control" id="abw_normal_bawah" name="abw_normal_bawah">
+                <input type="number" step="0.001" min="0" class="form-control" id="abw_normal_bawah" name="abw_normal_bawah">
                 @error('abw_normal_bawah')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
