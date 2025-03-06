@@ -27,6 +27,7 @@ class StandarController extends Controller
         try {
             // tambahin eror handling untuk validasi, kalau eror return back with eror
             $validator = Validator::make($request->all(), [
+                'populasi_id' => 'required|exists:populasis,id',
                 'fcr' => 'required|decimal:0,3',
                 'fi'  => 'required|decimal:0,3',
                 'fe'  => 'required|decimal:0,3',
@@ -62,6 +63,7 @@ class StandarController extends Controller
             $unhashed = Hashids::decode($id)[0];
             $standar = Standar_peforma::find($unhashed);
             $request->validate([
+                'populasi_id' => 'required|exists:populasis,id',
                 'fcr' => 'required|decimal:0,3',
                 'fi'  => 'required|decimal:0,3',
                 'fe'  => 'required|decimal:0,3',
