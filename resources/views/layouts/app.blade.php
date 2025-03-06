@@ -41,7 +41,7 @@
                 <div class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="{{ Request::is('/dashboard') ? 'active' : '' }}" href="/">
+                            <a class="{{ Request::is('dashboard') ? 'active' : '' }}" href="/">
                                 <span class="icon home" aria-hidden="true"></span>
                                 Beranda
                             </a>
@@ -59,17 +59,17 @@
                                     <a class="{{ Request::is('main/standar') ? 'active' : '' }}" href="{{ route('main.standar') }}">Standar</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('main.actual') }}">Actual</a>
+                                    <a class="{{ request::is('main/actual') ? 'active': '' }}" href="{{ route('main.actual') }}">Actual</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ route('main.populasi') }}">
+                            <a class="{{ request::is('main/populasi') ? 'active': '' }}" href="{{ route('main.populasi') }}">
                                 <span class="icon pop" aria-hidden="true"></span>Populasi
                                 </a>
                         </li>
                         <li>
-                            <a href="{{ route('main.perkembangan') }}">
+                            <a class="{{ request::is('main/perkembangan') ? 'active': '' }}" href="{{ route('main.perkembangan') }}">
                                 <span class="icon activity" aria-hidden="true">
                                 </span>Perkembangan
                                 </a>
@@ -80,7 +80,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="/">
+                            <a class="{{ request::is('main/laporan') ? 'active' : ''}}" href="{{ route('main.laporan') }}">
                                 <span class="icon report" aria-hidden="true"></span>Laporan
                             </a>
                         </li>

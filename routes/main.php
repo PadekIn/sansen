@@ -5,6 +5,7 @@ use App\Http\Controllers\StandarController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\ActualController;
 use App\Http\Controllers\PerkembanganController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function() {
@@ -53,4 +54,6 @@ Route::prefix('main')->group(function() {
         Route::patch('/update/{id}', [PerkembanganController::class, 'update'])->name('main.perkembangan.update');
         Route::get('/delete/{id}', [PerkembanganController::class, 'destroy'])->name('main.perkembangan.delete');
     });
+
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('main.laporan');
 });
