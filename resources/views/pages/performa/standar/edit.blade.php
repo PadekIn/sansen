@@ -16,6 +16,19 @@
             @csrf
             @method('PATCH')
             <div class="mb-3">
+                <label for="populasi_id" class="form-label">Populasi</label>
+                <select class="form-control" id="populasi_id" name="populasi_id" required>
+                    @foreach($populasis as $populasi)
+                        <option value="{{ $populasi->id }}" {{ $populasi->id == $standar->populasi_id ? 'selected' : '' }}>
+                            {{ $populasi->jumlah }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('populasi_id')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="fcr" class="form-label">fcr</label>
                 <input type="number" step="0.001" min="0" class="form-control" id="fcr" name="fcr" value="{{ $standar->fcr }}">
                 @error('fcr')

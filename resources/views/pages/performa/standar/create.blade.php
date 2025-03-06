@@ -15,6 +15,17 @@
         <form action="{{ route('main.standar.store') }}" method="post">
             @csrf
             <div class="mb-3">
+                <label for="populasi_id" class="form-label">Populasi</label>
+                <select class="form-control" id="populasi_id" name="populasi_id" required>
+                    <option value="">Pilih Populasi</option>
+                    @foreach($populasis as $populasi)
+                        <option value="{{ $populasi->id }}">{{ $populasi->jumlah }}</option>
+                    @endforeach
+                </select>
+                @error('populasi_id')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            <div class="mb-3">
                 <label for="fcr" class="form-label">fcr</label>
                 <input type="number" step="0.001" min="0" class="form-control" id="fcr" name="fcr">
                 @error('fcr')

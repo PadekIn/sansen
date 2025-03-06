@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Standar_peforma;
+use App\Models\Populasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Vinkla\Hashids\Facades\Hashids;
@@ -20,7 +21,8 @@ class StandarController extends Controller
     }
 
     public function create() {
-        return view('pages.performa.standar.create');
+        $populasis = Populasi::all();
+        return view('pages.performa.standar.create', compact('populasis'));
     }
 
     public function store(request $request) {
@@ -52,7 +54,8 @@ class StandarController extends Controller
         try {
             $unhashed = Hashids::decode($id)[0];
             $standar = Standar_peforma::find($unhashed);
-            return view('pages.performa.standar.edit', compact('standar'));
+            $populasis = Populasi::all();
+            return view('pages.performa.standar.edit', compact('standar', 'populasis'));
         } catch (\Throwable $th) {
             return redirect()->route('main.standar')->with('error', 'Something went wrong');
         }
