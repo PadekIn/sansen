@@ -22,6 +22,7 @@
             <table id="listTable" class="table datatable">
                 <thead>
                     <tr style="font-weight: bold">
+                        <td>populasi</td>
                         <td>fcr</td>
                         <td>fi</td>
                         <td>fe</td>
@@ -35,6 +36,7 @@
                 <tbody>
                     @foreach ($standars as $standar)
                         <tr>
+                            <td>{{ $standar->populasi->jumlah }}</td>
                             <td>{{ $standar->fcr }}</td>
                             <td>{{ $standar->fi }}</td>
                             <td>{{ $standar->fe }}</td>

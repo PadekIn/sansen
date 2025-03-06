@@ -33,4 +33,8 @@ class Populasi extends Model
     public function perkembangann() : HasOne {
         return $this->hasOne(Perkembangan::class);
     }
+
+    public function standarPeforma() : HasOne {
+        return $this->hasOne(Standar_peforma::class);
+    }
 }

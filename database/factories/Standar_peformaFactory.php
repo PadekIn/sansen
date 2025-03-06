@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Populasi;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class Standar_peformaFactory extends Factory
     public function definition(): array
     {
         return [
+            'populasi_id' => Populasi::factory(),
             'fcr' => $this->faker->randomFloat(3, 0, 9.999),
             'fi' => $this->faker->randomFloat(3, 0, 9.999),
             'fe' => $this->faker->randomFloat(2, 0, 99.99),

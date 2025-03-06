@@ -11,9 +11,10 @@ class StandarController extends Controller
 {
     public function index() {
         try{
-            $standars = Standar_peforma::all();
+            $standars = Standar_peforma::with('populasi')->get();
             return view('pages.performa.standar.list', compact('standars'));
         } catch (\Throwable $th) {
+            dd($th-> getMessage());
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
     }

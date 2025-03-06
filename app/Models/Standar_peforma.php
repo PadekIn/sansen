@@ -11,6 +11,7 @@ class Standar_peforma extends Model
     use HasFactory;
 
     protected $fillable = [
+        'populasi_id',
         'fcr',
         'fi',
         'fe',
@@ -22,5 +23,9 @@ class Standar_peforma extends Model
 
     public function getHashidAttribute() {
         return Hashids::encode($this->id);
+    }
+
+    public function populasi(){
+        return $this->belongsTo(Populasi::class);
     }
 }
