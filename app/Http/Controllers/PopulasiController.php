@@ -27,10 +27,10 @@ class PopulasiController extends Controller
     {
         $request->validate([
             'jumlah' => 'required|integer',
-            'berat' => 'required|numeric',
-            'umur_akhir' => 'required|numeric',
-            'grade_doc' => 'required|string|max:255',
-            'bw_doc' => 'required|numeric',
+            'berat' => 'required|integer',
+            'umur_akhir' => 'required|decimal:0,3',
+            'grade_doc' => 'required|in:Silver,Gold,Platinum',
+            'bw_doc' => 'required|integer',
             'asal_doc' => 'required|string|max:255',
             'check_in' => 'required|date',
             'check_out' => 'required|date',
@@ -59,11 +59,11 @@ class PopulasiController extends Controller
     {
         $request->validate([
             'jumlah' => 'required|integer',
-            'berat' => 'required|int',
-            'umur_akhir' => 'required|decimal',
-            'grade_doc' => 'required|string|max:255',
-            'bw_doc' => 'required|int',
-            'asal_doc' => 'required|varchar|max:255',
+            'berat' => 'required|integer',
+            'umur_akhir' => 'required|decimal:0,3',
+            'grade_doc' => 'required|in:Silver,Gold,Platinum',
+            'bw_doc' => 'required|integer',
+            'asal_doc' => 'required|string|max:255',
             'check_in' => 'required|date',
             'check_out' => 'required|date',
         ]);

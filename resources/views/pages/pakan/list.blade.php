@@ -1,9 +1,10 @@
 <x-app-layout>
     <div class="pagetitle px-4">
-        <h1>Daftar Pakan</h1>
+        <h1>Data Pakan</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('main.pakan') }}">Pakan</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item">Pakan</a></li>
             </ol>
         </nav>
     </div><!-- End Page Title -->

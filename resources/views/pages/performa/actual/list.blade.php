@@ -1,9 +1,10 @@
 <x-app-layout>
-    <div class="pagetitle px-4">
-        <h1>Daftar Performa Actual</h1>
+<div class="pagetitle px-4">
+        <h1>Data Performa Actual</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('main.actual') }}">Performa Actual</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item">Performa Actual</a></li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -49,8 +50,7 @@
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('main.actual.edit', $actual->hashid) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
-                                        <button type="button" onclick="destroy('{{ $actual->hashid }}')"
-                                        class="btn btn-sm btn-danger">Hapus</button>
+                                        <button type="button" onclick="destroy('{{ $actual->hashid }}')" class="btn btn-sm btn-danger">Hapus</button>
                                     </div>
                                 </td>
                             </tr>
