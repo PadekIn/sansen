@@ -100,7 +100,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('main.standar') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('main.perkembangan') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </section>
 </x-app-layout>
