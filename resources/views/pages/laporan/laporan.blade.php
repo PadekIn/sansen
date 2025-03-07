@@ -10,13 +10,11 @@
     </div><!-- End Page Title -->
 
     <section class="section p-4">
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title">
-                        <a href="{{ route('main.standar.create') }}" class="btn btn-primary">Tambah Standar Performa
-                            Baru
-                        </a>
+                        <a href="" class="btn btn-primary">Cetak</a>
                     </h5>
                 </div>
                     <table id="listTable" class="table datatable">
@@ -93,6 +91,109 @@
 
                         </tbody>
                     </table>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <table id="listTable" class="table datatable">
+                                <thead>
+                                    <tr style="font-weight: bold">
+                                        <td>GRADE DOC</td>
+                                        <td>BW DOC</td>
+                                        <td>ASAL DOC</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table id="listTable" class="table datatable">
+                                <thead>
+                                    <tr style="font-weight: bold">
+                                        <td class="">UMUR</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table id="listTable" class="table datatable">
+                                <thead>
+                                    <tr style="font-weight: bold">
+                                        <td>POPULASI</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="font-weight: bold">TOTAL KG</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row align-items-start">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <table id="listTable" class="table datatable">
+                                <thead>
+                                    <tr style="font-weight: bold">
+                                        <td>PAKAN</td>
+                                        <td>SB 10</td>
+                                        <td>SB 11</td>
+                                        <td>TOTAL KG</td>
+                                        <td>ZAK</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>KG</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col">
+                            <table id="listTable" class="table datatable">
+                                <thead>
+                                    <tr style="font-weight: bold">
+                                        <td>CHECK IN</td>
+                                        <td>CHECK OUT</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

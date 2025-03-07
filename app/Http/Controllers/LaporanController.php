@@ -14,11 +14,7 @@ class LaporanController extends Controller
     public function index() {
         try {
             $standars = Standar_peforma::all();
-            $actuals = Performa_actual::with('populasi')->get();
-            $populasis = Populasi::all();
-            $pakans = Pakan::all();
-            $perkembangans = Perkembangan::with('populasi', 'pakanAtas', 'pakanBawah')->get();
-            return view('pages.laporan.laporan', compact('standars', 'actuals', 'populasis', 'pakans', 'perkembangans'));
+            return view('pages.laporan.laporan', compact('standars'));
         } catch (\Throwable $th) {
             return redirect()->route('login')->with('error', 'Something went wrong');
         }
