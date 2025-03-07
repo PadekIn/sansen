@@ -14,7 +14,12 @@
             @csrf
             <div class="mb-3">
                 <label for="jenis" class="form-label">Jenis Pakan</label>
-                <input type="text" class="form-control" id="jenis" name="jenis" required>
+                <select class="form-control" id="jenis" name="jenis" required>
+                <option value="" disabled>Pilih Jenis Pakan</option>
+                    <option value="SB 10">SB 10</option>
+                    <option value="SB 11">SB 11</option>
+                    <option value="SB 12">SB 12</option>
+                </select>
                 @error('jenis')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror

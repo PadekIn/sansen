@@ -15,7 +15,12 @@
             @method('PATCH')
             <div class="mb-3">
                 <label for="jenis" class="form-label">Jenis Pakan</label>
-                <input type="text" class="form-control" id="jenis" name="jenis" value="{{ old('jenis', $pakan->jenis) }}" required>
+                <select class="form-control" id="jenis" name="jenis" required>
+                    <option value="" disabled {{ is_null($pakan->jenis ) ? 'selected' : '' }}>Pilih Jenis Pakan</option>
+                    <option value="SB 10" {{ old('jenis', $pakan->jenis) == 'SB 10' ? 'selected' : '' }}>SB 10</option>
+                    <option value="SB 11" {{ old('jenis', $pakan->jenis) == 'SB 11' ? 'selected' : '' }}>SB 11</option>
+                    <option value="SB 12" {{ old('jenis', $pakan->jenis) == 'SB 12' ? 'selected' : '' }}>SB 12</option>
+                </select>
                 @error('jenis')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
