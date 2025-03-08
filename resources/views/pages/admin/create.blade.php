@@ -40,8 +40,26 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="mb-3 form-check" style="font-size: 0.875em;">
+                <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()" style="transform: scale(0.8);">
+                <label class="form-check-label" for="showPassword">Tampilkan Password</label>
+            </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('main.admin') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var password = document.getElementById("password");
+            var passwordConfirmation = document.getElementById("password_confirmation");
+            if (password.type === "password") {
+                password.type = "text";
+                passwordConfirmation.type = "text";
+            } else {
+                password.type = "password";
+                passwordConfirmation.type = "password";
+            }
+        }
+    </script>
 </x-app-layout>

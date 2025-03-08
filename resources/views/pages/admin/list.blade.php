@@ -32,7 +32,6 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{ route('main.admin.edit', $user->id) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
                                         <form action="{{ route('main.admin.delete', $user->id) }}" method="POST" onsubmit="return confirmDelete(event)">
                                             @csrf
                                             @method('DELETE')

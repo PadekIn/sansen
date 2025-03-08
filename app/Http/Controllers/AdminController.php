@@ -39,13 +39,16 @@ class AdminController extends Controller
         return redirect()->route('main.admin')->with('success', 'Admin created successfully.');
     }
 
-    public function edit(User $admin)
+    public function edit($id)
     {
+        $admin = User::findOrFail($id);
         return view('pages.admin.edit', compact('admin'));
     }
 
-    public function update(Request $request, User $admin)
+    public function update(Request $request, $id)
     {
+        $admin = User::findOrFail($id);
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $admin->id],
@@ -67,7 +70,7 @@ class AdminController extends Controller
         try {
             $admin = User::findOrFail($id);
             $admin->delete();
-            return redirect()->route('main.admin')->with('success', 'Admin deleted successfully');
+            return redirect()->route('main.admin')->with('success', 'Admin deleted successfully.');
         } catch (\Throwable $th) {
             return redirect()->route('main.admin')->with('error', 'Server Error, admin gagal dihapus');
         }
