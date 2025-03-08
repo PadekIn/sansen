@@ -55,5 +55,7 @@ Route::prefix('main')->group(function() {
         Route::get('/delete/{id}', [PerkembanganController::class, 'destroy'])->name('main.perkembangan.delete');
     });
 
-    Route::get('/laporan', [LaporanController::class, 'index'])->name('main.laporan');
+    Route::get('/laporan', [LaporanController::class, 'laporanPage'])->name('main.laporan');
+    Route::post('/laporan', [LaporanController::class, 'laporan'])->name('mainlaporan');
+
 });

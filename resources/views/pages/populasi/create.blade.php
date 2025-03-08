@@ -28,7 +28,7 @@
             </div>
             <div class="mb-3">
                 <label for="umur_akhir" class="form-label">Umur Akhir</label>
-                <input type="number" class="form-control" id="umur_akhir" name="umur_akhir" required>
+                <input type="number" step="0.001" min="0" class="form-control" id="umur_akhir" name="umur_akhir" required>
                 @error('umur_akhir')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
