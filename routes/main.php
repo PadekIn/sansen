@@ -57,11 +57,9 @@ Route::prefix('main')->group(function () {
         Route::get('/delete/{id}', [PerkembanganController::class, 'destroy'])->name('main.perkembangan.delete');
     });
 
-<<<<<<< HEAD
     Route::get('/laporan', [LaporanController::class, 'laporanPage'])->name('main.laporan');
     Route::post('/laporan', [LaporanController::class, 'laporan'])->name('mainlaporan');
 
-=======
     Route::prefix('admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('main.admin');
         Route::get('/create', [AdminController::class, 'create'])->name('main.admin.create');
@@ -75,7 +73,6 @@ Route::prefix('main')->group(function () {
     Route::get('/dashboard/data-kematian', [DashboardController::class, 'dataKematian'])->name('main.dashboard.kematian');
     Route::get('/dashboard/data-pakan', [DashboardController::class, 'dataPakan'])->name('main.dashboard.pakan');
     Route::get('/dashboard/data-abw', [DashboardController::class, 'dataAbw'])->name('main.dashboard.abw');
->>>>>>> a76feb14c83035fd69cef86d9c8cc566b0b0d511
 });
 
 
