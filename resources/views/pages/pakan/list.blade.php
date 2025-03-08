@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title">
-                        <a href="{{ route('main.pakan.create') }}" class="btn btn-primary">Tambah Pakan</a>
+                        <a href="{{ route('main.pakan.create') }}" class="primary-default-btn">Tambah Pakan</a>
                     </h5>
                 </div>
                 <table class="table">
@@ -34,13 +34,14 @@
                                 <td>{{ $pakan->jumlah }}</td>
                                 <td>{{ $pakan->tgl_beli }}</td>
                                 <td>{{ $pakan->keterangan }}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('main.pakan.edit', $pakan->hashid) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
-                                        <button type="button" onclick="destroy('{{ $pakan->hashid }}')"
-                                            class="btn btn-danger btn-sm">Hapus</button>
-                                    </div>
-                                </td>
+                                <td class="no-print">
+                                <div class="d-flex">
+                                    <a href="{{ route('main.pakan.edit', $pakan->hashid) }}"
+                                        class="primary-white-btn">Sunting</a>
+                                    <div style="width: 10px;"></div>
+                                    <button type="button" onclick="destroy('{{ $pakan->hashid }}')"
+                                        class="secondary-default-btn">Hapus</button>
+                                </div>
                             </tr>
                         @endforeach
                     </tbody>
@@ -56,8 +57,8 @@
                 text: "Ingin menghapus data Pakan Ini!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
+                confirmButtonColor: '#914149',
+                cancelButtonColor: '#3d8497',
                 confirmButtonText: 'Ya, Yakin!',
                 cancelButtonText: 'Tidak, Batalkan!'
             }).then((result) => {

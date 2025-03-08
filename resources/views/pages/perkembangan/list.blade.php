@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5 class="card-title">
-                            <a href="{{ route('main.perkembangan.create') }}" class="btn btn-primary">Tambah Perkembangan
+                            <a href="{{ route('main.perkembangan.create') }}" class="primary-default-btn">Tambah Perkembangan
                                 Baru</a>
                         </h5>
                     </div>
@@ -51,10 +51,10 @@
                                     <td class="no-print">
                                         <div class="d-flex">
                                             <a href="{{ route('main.perkembangan.edit', $perkembangan->hashid) }}"
-                                                class="btn btn-sm btn-warning">Sunting</a>
+                                                class="primary-white-btn">Sunting</a>
                                             <div style="width: 10px;"></div>
                                             <button type="button" onclick="destroy('{{ $perkembangan->hashid }}')"
-                                                class="btn btn-sm btn-danger">Hapus</button>
+                                                class="secondary-default-btn">Hapus</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -75,8 +75,8 @@
                     text: "Ingin menghapus data Perkembangan Ini!",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#914149',
+                    cancelButtonColor: '#3d8497',
                     confirmButtonText: 'Ya, Aku Yakin!',
                     cancelButtonText: 'Tidak, Batalkan!'
                 }).then((result) => {

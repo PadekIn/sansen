@@ -21,8 +21,8 @@
                     </option>
                 @endforeach
             </select>
-            <button type="submit" class="btn btn-sm btn-primary">Filter</button>
-            <button class="btn btn-sm btn-warning text-white" id="btn-print">Print</button>
+            <button type="submit" class="primary-default-btn">Filter</button>
+            <button class="primary-white-btn" id="btn-print">Print</button>
         </form>
 
         {{-- <div class="d-flex justify-content-between align-items-center">

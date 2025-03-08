@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title">
-                        <a href="{{ route('main.populasi.create') }}" class="btn btn-primary">Tambah Populasi</a>
+                        <a href="{{ route('main.populasi.create') }}" class="primary-default-btn">Tambah Populasi</a>
                     </h5>
                 </div>
                 <table class="table">
@@ -42,13 +42,15 @@
                                 <td>{{ $populasi->asal_doc }}</td>
                                 <td>{{ $populasi->check_in }}</td>
                                 <td>{{ $populasi->check_out }}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('main.populasi.edit', $populasi->hashid) }}" class="btn btn-warning btn-sm me-2">Sunting</a>
-                                        <button type="button" onclick="destroy('{{ $populasi->hashid }}')" class="btn btn-danger btn-sm">Hapus</button>
-                                    </div>
-                                </td>
-                            </tr>
+                                <td class="no-print">
+                                <div class="d-flex">
+                                    <a href="{{ route('main.populasi.edit', $populasi->hashid) }}"
+                                        class="primary-white-btn">Sunting</a>
+                                    <div style="width: 10px;"></div>
+                                    <button type="button" onclick="destroy('{{ $populasi->hashid }}')"
+                                        class="secondary-default-btn">Hapus</button>
+                                </div>
+                            </td>
                         @endforeach
                     </tbody>
                 </table>
@@ -63,8 +65,8 @@
                 text: "Ingin menghapus data Populasi Ini!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
+                confirmButtonColor: '#914149',
+                cancelButtonColor: '#3d8497',
                 confirmButtonText: 'Ya, Yakin!',
                 cancelButtonText: 'Tidak, Batalkan!'
             }).then((result) => {

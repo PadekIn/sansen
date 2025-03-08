@@ -1391,14 +1391,15 @@ button.disabled:focus {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 10px 20px;
-  background-color: #2f49d1;
+  background-color: #3d8497;
   color: #fff;
+  font-size: 14px;
 }
 
 .primary-default-btn:hover {
-  background-color: #4661F0;
+  background-color: #326c7c;
   color: #fff;
 }
 
@@ -1414,17 +1415,16 @@ button.disabled:focus {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  border-radius: 4px;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #2f49d1;
-  font-weight: 500;
+  border-radius: 10px;
+  padding: 8px 15px;
+  background-color: #e68656;
+  color: #fff;
   font-size: 14px;
-  line-height: 2.43;
 }
 
 .primary-white-btn:hover {
-  color: #4661F0;
+    background-color: #cc612c;
+    color: #fff;
 }
 
 .secondary-default-btn {
@@ -1439,16 +1439,41 @@ button.disabled:focus {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  border-radius: 4px;
-  padding: 10px 20px;
-  border: 2px solid #2f49d1;
-  color: #2f49d1;
-  background-color: transparent;
+  border-radius: 10px;
+  padding: 8px 15px;
+  color: #fff;
+  background-color: #914149;
+  font-size: 14px;
 }
 
 .secondary-default-btn:hover {
-  background-color: rgba(47, 73, 209, 0.1);
+  background-color: #914149;
+  color: #fff;
 }
+
+.terary-default-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #d6cccd;
+    font-size: 14px;
+  }
+
+  .terary-default-btn:hover {
+    background-color: #978e8f;
+    color: #fff;
+  }
 
 .flat-btn {
   display: -webkit-box;

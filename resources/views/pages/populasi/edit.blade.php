@@ -81,8 +81,10 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Perbarui</button>
-            <a href="{{ route('main.populasi') }}" class="btn btn-secondary">Kembali</a>
+            <div class="d-flex justify-content">
+                <button type="submit" class="primary-default-btn" style="margin-right: 10px;">Perbarui</button>
+                <a href="{{ route('main.populasi') }}" class="terary-default-btn">Kembali</a>
+            </div>
         </form>
     </div>
 </x-app-layout>

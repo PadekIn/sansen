@@ -73,8 +73,10 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('main.actual') }}" class="btn btn-secondary">Kembali</a>
+            <div class="d-flex justify-content">
+                <button type="submit" class="primary-default-btn" style="margin-right: 10px;">Simpan</button>
+                <a href="{{ route('main.actual') }}" class="terary-default-btn">Kembali</a>
+            </div>
         </form>
     </div>
 </x-app-layout>

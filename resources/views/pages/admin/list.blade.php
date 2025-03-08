@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title">
-                        <a href="{{ route('main.admin.create') }}" class="btn btn-primary">Tambah Admin</a>
+                        <a href="{{ route('main.admin.create') }}" class="primary-default-btn">Tambah Admin</a>
                     </h5>
                 </div>
                 <table class="table">
@@ -35,7 +35,7 @@
                                         <form action="{{ route('main.admin.delete', $user->id) }}" method="POST" onsubmit="return confirmDelete(event)">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                            <button type="submit" class="secondary-default-btn">Hapus</button>
                                         </form>
                                     </div>
                                 </td>
@@ -55,8 +55,8 @@
                 text: "Ingin menghapus data admin Ini!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
+                confirmButtonColor: '#914149',
+                cancelButtonColor: '#3d8497',
                 confirmButtonText: 'Ya, Yakin!',
                 cancelButtonText: 'Tidak, Batalkan!'
             }).then((result) => {

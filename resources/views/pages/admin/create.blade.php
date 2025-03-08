@@ -44,8 +44,10 @@
                 <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()" style="transform: scale(0.8);">
                 <label class="form-check-label" for="showPassword">Tampilkan Password</label>
             </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('main.admin') }}" class="btn btn-secondary">Kembali</a>
+            <div class="d-flex justify-content">
+                <button type="submit" class="primary-default-btn" style="margin-right: 10px;">Simpan</button>
+                <a href="{{ route('main.admin') }}" class="terary-default-btn">Kembali</a>
+            </div>
         </form>
     </div>
 
