@@ -69,7 +69,6 @@ Route::prefix('main')->group(function () {
         Route::delete('/delete/{id}', [AdminController::class, 'destroy'])->name('main.admin.delete');
     });
 
-    Route::get('/laporan', [LaporanController::class, 'index'])->name('main.laporan');
     Route::get('/dashboard/data-kematian', [DashboardController::class, 'dataKematian'])->name('main.dashboard.kematian');
     Route::get('/dashboard/data-pakan', [DashboardController::class, 'dataPakan'])->name('main.dashboard.pakan');
     Route::get('/dashboard/data-abw', [DashboardController::class, 'dataAbw'])->name('main.dashboard.abw');
