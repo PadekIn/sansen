@@ -23,15 +23,13 @@ class DashboardController extends Controller
 
     public function dataPakan() {
         try {
-            $latestPopulasi = Populasi::orderBy('id', 'desc')->first();
-            $pakans = Pakan::select('created_at', 'jenis', 'jumlah')
-                ->where('populasi_id', $latestPopulasi->id)
-                ->get();
+            $pakans = Pakan::select('created_at', 'jenis', 'jumlah')->get();
             return response()->json($pakans);
         } catch (\Throwable $th) {
             return response()->json(['error' => 'Something went wrong'], 500);
         }
     }
+
 
     public function dataAbw() {
         try {
