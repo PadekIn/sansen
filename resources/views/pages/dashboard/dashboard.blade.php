@@ -3,22 +3,22 @@
         <h1>Beranda</h1>
     </div>
     <div class="section p-4 d-flex">
-        <div class="card mb-4" style="flex: 1; margin-right: 20px;">
-            <div class="card-body text-center">
-            <h8>Data ABW</h8><br><br>
+        <div class="card mb-4 chart-container" style="flex: 1; margin-right: 20px;">
+            <div class="card-body text-center chart-wrapper">
+                <h8>Data ABW</h8><br><br>
                 <canvas id="abwChart"></canvas>
             </div>
         </div>
         <div>
-            <div class="card mb-4">
-                <div class="card-body text-center">
-                <h7>Data Kematian</h7><br><br>
+            <div class="card mb-4 chart-container">
+                <div class="card-body text-center chart-wrapper">
+                    <h7>Data Kematian</h7><br><br>
                     <canvas id="kematianChart"></canvas>
                 </div>
             </div>
-            <div class="card mb-4"">
-                <div class="card-body text-center">
-                <h8>Data Pakan</h8><br><br>
+            <div class="card mb-4 chart-container">
+                <div class="card-body text-center chart-wrapper">
+                    <h8>Data Pakan</h8><br><br>
                     <canvas id="pakanChart"></canvas>
                 </div>
             </div>
@@ -179,5 +179,28 @@
                 var pakanChart = new Chart(ctxPakan, configPakan);
             })
             .catch(error => console.error('Error fetching data:', error));
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sidebar = document.querySelector('.sidebar');
+            var charts = document.querySelectorAll('.chart-wrapper canvas');
+
+            function resizeCharts() {
+                charts.forEach(function(chart) {
+                    chart.style.width = '80%';
+                    chart.style.height = '120%';
+                });
+            }
+
+            var sidebarToggle = document.querySelector('.sidebar-toggle');
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function() {
+                    setTimeout(resizeCharts, 200);
+                });
+            }
+
+            window.addEventListener('resize', resizeCharts);
+            resizeCharts();
+        });
     </script>
 </x-app-layout>

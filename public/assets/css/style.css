@@ -2931,6 +2931,22 @@ label {
   padding: 20px;
 }
 
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.chart-wrapper {
+    width: 100%;
+    max-width: 100%;
+}
+
+.sidebar.hidden + .main-content .chart-wrapper {
+    max-width: calc(100% - 64px);
+}
+
 .main {
   padding-top: 20px;
   padding-bottom: 20px;
