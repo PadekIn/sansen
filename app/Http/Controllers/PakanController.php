@@ -26,7 +26,7 @@ class PakanController extends Controller
     public function store(Request $request)
     {
         $validator = $request->validate([
-            'jenis' => 'required|string|max:75',
+            'jenis' => '',
             'jumlah' => 'required|integer',
             'tgl_beli' => 'required|date',
             'keterangan' => 'nullable|string|max:255',
@@ -54,7 +54,7 @@ class PakanController extends Controller
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'jenis' => 'required|string|max:75',
+            'jenis' => 'required|in:SB 10,SB 11,SB 12',
             'jumlah' => 'required|integer',
             'tgl_beli' => 'required|date',
             'keterangan' => 'nullable|string|max:255',

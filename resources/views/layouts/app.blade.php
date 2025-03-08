@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sansen Brother Farm | Beranda</title>
+    <title>Sansen Brother Farm</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/img/svg/logo.PNG') }}" type="image/x-icon">
     <!-- Custom styles -->
@@ -84,6 +84,14 @@
                                 <span class="icon report" aria-hidden="true"></span>Laporan
                             </a>
                         </li>
+                        <li>
+                            <hr>
+                        </li>
+                        <li>
+                            <a class="{{ request::is('main/admin') ? 'active' : '' }}" href="{{ route('main.admin') }}">
+                                <span class="icon user" aria-hidden="true"></span>Admin
+                            </a>
+                        </li>
                 </div>
             </div>
         </aside>
@@ -108,14 +116,14 @@
                                 </span>
                             </button>
                             <ul class="users-item-dropdown nav-user-dropdown dropdown">
-                                <li><a href="##">
+                                <!-- <li><a href="##">
                                         <i data-feather="user" aria-hidden="true"></i>
                                         <span>Profile</span>
-                                    </a></li>
-                                <li><a href="##">
+                                    </a></li> -->
+                                <!-- <li><a href="##">
                                         <i data-feather="settings" aria-hidden="true"></i>
-                                        <span>Account settings</span>
-                                    </a></li>
+                                        <span>Tambah Pengguna</span>
+                                    </a></li> -->
                                 <form method="POST" action="{{ route(name: 'logout') }}">
                                     @csrf
                                     <li><a class="danger" href="route('logout')"
