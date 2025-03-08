@@ -109,7 +109,8 @@
                         responsive: true,
                         plugins: {
                             legend: {
-                                display: false
+                                display: true,
+                                position: 'bottom'
                             },
                             tooltip: {
                                 callbacks: {
@@ -162,7 +163,8 @@
                         responsive: true,
                         plugins: {
                             legend: {
-                                display: false
+                                display: true,
+                                position: 'bottom'
                             },
                             tooltip: {
                                 callbacks: {

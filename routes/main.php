@@ -7,6 +7,7 @@ use App\Http\Controllers\ActualController;
 use App\Http\Controllers\PerkembanganController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('main')->group(function () {
@@ -56,8 +57,19 @@ Route::prefix('main')->group(function () {
         Route::get('/delete/{id}', [PerkembanganController::class, 'destroy'])->name('main.perkembangan.delete');
     });
 
+    Route::prefix('admin')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('main.admin');
+        Route::get('/create', [AdminController::class, 'create'])->name('main.admin.create');
+        Route::post('/store', [AdminController::class, 'store'])->name('main.admin.store');
+        Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('main.admin.edit');
+        Route::patch('/update/{id}', [AdminController::class, 'update'])->name('main.admin.update');
+        Route::delete('/delete/{id}', [AdminController::class, 'destroy'])->name('main.admin.delete');
+    });
+
     Route::get('/laporan', [LaporanController::class, 'index'])->name('main.laporan');
     Route::get('/dashboard/data-kematian', [DashboardController::class, 'dataKematian'])->name('main.dashboard.kematian');
     Route::get('/dashboard/data-pakan', [DashboardController::class, 'dataPakan'])->name('main.dashboard.pakan');
     Route::get('/dashboard/data-abw', [DashboardController::class, 'dataAbw'])->name('main.dashboard.abw');
 });
+
+
