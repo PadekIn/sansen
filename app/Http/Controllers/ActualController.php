@@ -6,6 +6,7 @@ use App\Models\Performa_actual;
 use App\Models\Populasi;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Support\Facades\Validator;
 
 class ActualController extends Controller
 {
@@ -27,7 +28,7 @@ class ActualController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'populasi_id' => 'required|exists:populasis,id',
             'fcr' => 'required|decimal:0,3',
             'fi' => 'required|decimal:0,3',
@@ -37,6 +38,10 @@ class ActualController extends Controller
             'adg' => 'required|decimal:0,3',
             'ip' => 'required|decimal:0,3',
         ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
 
         try {
             Performa_actual::create($request->all());
