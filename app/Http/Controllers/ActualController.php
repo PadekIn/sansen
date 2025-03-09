@@ -42,7 +42,7 @@ class ActualController extends Controller
             Performa_actual::create($request->all());
             return redirect()->route('main.actual')->with('success', 'Data Actual created successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.actual')->with('error', 'Server Error, data actual gagal ditambahkan');
+            return redirect()->back()->with('error', $th->getMessage());;
         }
     }
 
@@ -54,7 +54,7 @@ class ActualController extends Controller
             $populasis = Populasi::all();
             return view('pages.performa.actual.edit', compact('actual', 'populasis'));
         } catch (\Throwable $th) {
-            return redirect()->route('main.actual')->with('error', 'Server Error');
+            return redirect()->back()->with('error', $th->getMessage());;
         }
     }
 
@@ -78,7 +78,7 @@ class ActualController extends Controller
 
             return redirect()->route('main.actual')->with('success', 'Data Actual updated successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.actual')->with('error', 'Server Error, data actual gagal diubah');
+            return redirect()->back()->with('error', $th->getMessage());;
         }
     }
 
