@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item">Edit Populasi</li>
             </ol>
         </nav>
-    </div>
+    </div> <!-- End Page Title -->
     <div class="section p-4">
         <form method="POST" action="{{ route('main.populasi.update', $populasi->hashid) }}">
             @csrf
@@ -46,13 +46,6 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <!-- <div class="mb-3">
-                <label for="grade_doc" class="form-label">Grade DOC</label>
-                <input type="text" class="form-control" id="grade_doc" name="grade_doc" value="{{ old('grade_doc', $populasi->grade_doc) }}" required>
-                @error('grade_doc')
-                <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div> -->
             <div class="mb-3">
                 <label for="bw_doc" class="form-label">BW DOC</label>
                 <input type="number" step="0.01" class="form-control" id="bw_doc" name="bw_doc" value="{{ old('bw_doc', $populasi->bw_doc) }}" required>

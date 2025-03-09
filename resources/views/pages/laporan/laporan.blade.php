@@ -24,13 +24,6 @@
             <button type="submit" class="primary-default-btn">Filter</button>
             <button class="primary-white-btn" id="btn-print">Print</button>
         </form>
-
-        {{-- <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title"> --}}
-                {{-- <a href="" class="btn btn-primary">Cetak</a> --}}
-
-            {{-- </h5>
-        </div> --}}
     </div>
 
     @if (isset($laporans))

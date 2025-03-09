@@ -17,11 +17,6 @@
                         <a href="{{ route('main.actual.create') }}" class="primary-default-btn">Tambah Performa Actual</a>
                     </h5>
                 </div>
-                <!-- @if(session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif -->
                 <table class="table">
                     <thead class="table-light">
                         <tr>

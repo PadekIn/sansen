@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item">Tambah Performa Actual</li>
             </ol>
         </nav>
-    </div>
+    </div> <!-- End Page Title -->
     <div class="section p-4">
         <form method="POST" action="{{ route('main.actual.store') }}">
             @csrf

@@ -11,7 +11,6 @@
     </div><!-- End Page Title -->
 
     <section class="section p-4">
-        {{-- <h3 class="mb-4">Edit Standar</h3> --}}
         <form action="{{ route('main.standar.update', $standar->hashid) }}" method="post">
             @csrf
             @method('PATCH')
