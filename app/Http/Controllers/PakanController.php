@@ -36,7 +36,7 @@ class PakanController extends Controller
             Pakan::create($request->all());
             return redirect()->route('main.pakan')->with('success', 'Pakan created successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.pakan')->with('error', 'Server Error, data pakan gagal ditambahkan');
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
@@ -67,7 +67,7 @@ class PakanController extends Controller
 
             return redirect()->route('main.pakan')->with('success', 'Pakan updated successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.pakan')->with('error', 'Server Error, data pakan gagal diubah');
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
@@ -79,7 +79,7 @@ class PakanController extends Controller
             $pakan->delete();
             return redirect()->route('main.pakan')->with('success', 'Pakan deleted successfully');
         } catch (\Throwable $th) {
-            return redirect()->route('main.pakan')->with('error', $th->getMessage());
+            return redirect()->route('main.pakan')->with('error', 'Data pakan gagal dihapus, pastikan data tidak terpakai di halaman data lain');
         }
     }
 }
