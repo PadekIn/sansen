@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item">Tambah Populasi</li>
             </ol>
         </nav>
-    </div>
+    </div> <!-- End Page Title -->
     <div class="section p-4">
         <form method="POST" action="{{ route('main.populasi.store') }}">
             @csrf

@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item">Tambah Pakan</li>
             </ol>
         </nav>
-    </div>
+    </div> <!-- End Page Title -->
     <div class="pagetitle px-4">
         <form method="POST" action="{{ route('main.pakan.store') }}">
             @csrf
