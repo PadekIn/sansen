@@ -32,11 +32,11 @@ class StandarController extends Controller
                 'populasi_id' => 'required|exists:populasis,id',
                 'fcr' => 'required|decimal:0,3',
                 'fi'  => 'required|decimal:0,3',
-                'fe'  => 'required|decimal:0,3',
-                'dep' => 'required|decimal:0,3',
-                'abw' => 'required|decimal:0,3',
-                'adg' => 'required|decimal:0,3',
-                'ip'  => 'required|decimal:0,3'
+                'fe'  => 'required|decimal:0,2',
+                'dep' => 'required|decimal:0,2',
+                'abw' => 'required|decimal:0,2',
+                'adg' => 'required|integer',
+                'ip'  => 'required|integer'
             ]);
 
             if ($validator->fails()) {
@@ -69,11 +69,11 @@ class StandarController extends Controller
                 'populasi_id' => 'required|exists:populasis,id',
                 'fcr' => 'required|decimal:0,3',
                 'fi'  => 'required|decimal:0,3',
-                'fe'  => 'required|decimal:0,3',
-                'dep' => 'required|decimal:0,3',
-                'abw' => 'required|decimal:0,3',
-                'adg' => 'required|decimal:0,3',
-                'ip'  => 'required|decimal:0,3'
+                'fe'  => 'required|decimal:0,2',
+                'dep' => 'required|decimal:0,2',
+                'abw' => 'required|decimal:0,2',
+                'adg' => 'required|integer',
+                'ip'  => 'required|integer'
             ]);
             $standar->update($request->all());
             return redirect()->route('main.standar')->with('success', 'Standar Performa updated successfully');

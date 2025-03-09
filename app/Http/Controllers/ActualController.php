@@ -32,11 +32,11 @@ class ActualController extends Controller
             'populasi_id' => 'required|exists:populasis,id',
             'fcr' => 'required|decimal:0,3',
             'fi' => 'required|decimal:0,3',
-            'fe' => 'required|decimal:0,3',
-            'dep' => 'required|decimal:0,3',
-            'abw' => 'required|decimal:0,3',
-            'adg' => 'required|decimal:0,3',
-            'ip' => 'required|decimal:0,3',
+            'fe' => 'required|decimal:0,2',
+            'dep' => 'required|decimal:0,2',
+            'abw' => 'required|decimal:0,2',
+            'adg' => 'required|integer',
+            'ip' => 'required|integer',
         ]);
 
         if ($validator->fails()) {
@@ -47,7 +47,7 @@ class ActualController extends Controller
             Performa_actual::create($request->all());
             return redirect()->route('main.actual')->with('success', 'Data Actual created successfully');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());;
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
@@ -59,7 +59,7 @@ class ActualController extends Controller
             $populasis = Populasi::all();
             return view('pages.performa.actual.edit', compact('actual', 'populasis'));
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());;
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
@@ -69,11 +69,11 @@ class ActualController extends Controller
             'populasi_id' => 'required|exists:populasis,id',
             'fcr' => 'required|decimal:0,3',
             'fi' => 'required|decimal:0,3',
-            'fe' => 'required|decimal:0,3',
-            'dep' => 'required|decimal:0,3',
-            'abw' => 'required|decimal:0,3',
-            'adg' => 'required|decimal:0,3',
-            'ip' => 'required|decimal:0,3',
+            'fe' => 'required|decimal:0,2',
+            'dep' => 'required|decimal:0,2',
+            'abw' => 'required|decimal:0,2',
+            'adg' => 'required|integer',
+            'ip' => 'required|integer',
         ]);
 
         try {
@@ -83,7 +83,7 @@ class ActualController extends Controller
 
             return redirect()->route('main.actual')->with('success', 'Data Actual updated successfully');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error', $th->getMessage());;
+            return redirect()->back()->with('error', $th->getMessage());
         }
     }
 
