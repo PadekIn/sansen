@@ -32,10 +32,19 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <form action="{{ route('main.admin.delete', $user->id) }}" method="POST" onsubmit="return confirmDelete(event)">
+                                        <a href="{{ route('main.admin.edit', $user->id) }}"
+                                            class="primary-white-btn">Sunting</a>
+                                        <form action="{{ route('main.admin.delete', $user->id) }}" method="POST"
+                                            @if ($users->count() == 1) onsubmit="return tidakBisaHapus(event)"  @else onsubmit="return confirmDelete(event)" @endif
+
+
+                                            {{-- onsubmit="@if ($users->count() == 1) return confirmDelete(event) @else tidakBisaHapus() @endif" --}}
+                                             >
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="secondary-default-btn">Hapus</button>
+                                            <button type="submit" class="secondary-default-btn"
+{{-- @if ($users->count() == 1) onsubmit="return tidakBisaHapus(event)" @endif --}}
+                                            >Hapus</button>
                                         </form>
                                     </div>
                                 </td>
@@ -63,6 +72,17 @@
                 if (result.isConfirmed) {
                     event.target.submit();
                 }
+            });
+        }
+
+        function tidakBisaHapus(event) {
+            event.preventDefault();
+            return Swal.fire({
+                title: 'Tidak Bisa Menghapus',
+                text: "Minimal satu admin harus ada!",
+                icon: 'warning',
+                confirmButtonColor: '#3d8497',
+                confirmButtonText: 'OK'
             });
         }
     </script>
